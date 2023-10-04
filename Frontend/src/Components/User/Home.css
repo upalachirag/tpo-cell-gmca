@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.head {
+    background-color: #007ACC;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.placement-officer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.placement-officer img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.recruiters {
+    display: flex;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.recruiters img {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
+/* Home.css */
+/* Home.css */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .head.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
