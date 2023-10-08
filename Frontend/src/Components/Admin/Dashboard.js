@@ -13,7 +13,7 @@ const Dashboard = () => {
                         </div>
                         {/* <!-- /. ROW  --> */}
                         <div className="row">
-                            <div className="col-md-3">
+                            <div className="col-md-10">
                                 <div className="main-box mb-red">
                                     <a href="/">
                                         <i className="fa fa-bolt fa-5x"></i>
@@ -21,7 +21,7 @@ const Dashboard = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-10">
                                 <div className="main-box mb-dull">
                                     <a href="/">
                                         <i className="fa fa-plug fa-5x"></i>
@@ -29,7 +29,7 @@ const Dashboard = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-10">
                                 <div className="main-box mb-pink">
                                     <a href="/">
                                         <i className="fa fa-dollar fa-5x"></i>
@@ -37,7 +37,7 @@ const Dashboard = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-10">
                                 <div className="main-box mb-red">
                                     <a href="/">
                                         <i className="fa fa-dollar fa-5x"></i>
@@ -49,49 +49,7 @@ const Dashboard = () => {
                         </div>
                         {/* <!-- /. ROW  --> */}
 
-                        <div className="row">
-                            <div className="col-md-8">
-                                {/* <!-- /. ROW  --> */}
-                                <hr />
-
-                                <div className="panel panel-default">
-
-                                    <div id="carousel-example" className="carousel slide" data-ride="carousel"
-                                        style={{ border: '5px solid #000' }}>
-
-                                        <div className="carousel-inner">
-                                            <div className="item active">
-
-                                                <img src="assets/img/slideshow/1.jpg" alt="" />
-
-                                            </div>
-                                            <div className="item">
-                                                <img src="assets/img/slideshow/2.jpg" alt="" />
-
-                                            </div>
-                                            <div className="item">
-                                                <img src="assets/img/slideshow/3.jpg" alt="" />
-
-                                            </div>
-                                        </div>
-                                        {/* <!--INDICATORS--> */}
-                                        <ol className="carousel-indicators">
-                                            <li data-target="#carousel-example" data-slide-to="0" className="active"></li>
-                                            <li data-target="#carousel-example" data-slide-to="1"></li>
-                                            <li data-target="#carousel-example" data-slide-to="2"></li>
-                                        </ol>
-                                        {/* <!--PREVIUS-NEXT BUTTONS--> */}
-                                        <a className="left carousel-control" href="#carousel-example" data-slide="prev">
-                                            <span className="glyphicon glyphicon-chevron-left"></span>
-                                        </a>
-                                        <a className="right carousel-control" href="#carousel-example" data-slide="next">
-                                            <span className="glyphicon glyphicon-chevron-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!--/.Chat Panel End--> */}
-                        </div>
+                        
                         <hr />
                         <div className="row">
 
@@ -135,9 +93,6 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* <!--/.Row--> */}
-                            <hr />
-
-                            {/* <!--/.ROW--> */}
 
                         </div>
                         {/* <!-- /. PAGE INNER  --> */}

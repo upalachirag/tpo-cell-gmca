@@ -45,7 +45,8 @@ body {
     font-weight: 800;
     padding-bottom: 20px;
     border-bottom: 2px solid #00CA79;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    width: 920px;
 }
 
 .page-subhead-line {

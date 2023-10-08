@@ -23,7 +23,7 @@ const Head = () => {
                         <span className="icon-bar"></span>
                     </button>
                 </div>
-                GMCA Training & Placement Cell
+                GMCA Training & Placement Cell Admin Panel
                 {/* <div className="header-right">
 
                     <a href="/" className="btn btn-info" title="New Message"> Home </a>
@@ -54,7 +54,7 @@ const Head = () => {
 
 
                         <li>
-                            <a className="active-menu" href="/admin"><i className="fa fa-dashboard "></i> Admin Dashboard</a>
+                            <Link className="active-menu" to="/admin"><i className="fa fa-dashboard "></i> Admin Dashboard</Link>
                         </li>
                         {/* <li>
                             <a href="/"><i className="fa fa-desktop "></i>Students<span className="fa arrow"></span></a>
@@ -62,23 +62,23 @@ const Head = () => {
                             </ul>
                         </li> */}
                         <li>
-                            <Link to="/admin/StuList"><i className="fa fa-toggle-on"></i>Student - List </Link>
+                            <Link to="/admin/StuList"><i className="fa fa-list"></i>Student - List </Link>
                         </li>
                         <li>
-                            <Link to="/admin/SelectStu"><i className="fa fa-edit "></i>Selected Students List</Link>
+                            <Link to="/admin/SelectStu"><i className="fa fa-list-ul "></i>Selected Students List</Link>
                         </li>
                         <li>
                             <Link to="/admin/Notification"><i className="fa fa-bell "></i>Notifications</Link>
                         </li>
                         <li>
-                            <a href="/admin"><i className="fa fa-edit "></i>Company Management</a>
+                            <Link to="/admin/CompanyManage"><i className="fa fa-edit "></i>Company Management</Link>
                         </li>
                         <li>
-                            <a href="/admin"><i className="fa fa-upload "></i> Job and Intership Management</a>
+                            <Link to="/admin/JobManage"><i className="fa fa-upload "></i> Job and Intership Management</Link>
                         </li>
 
                         <li>
-                            <a href="/admin"><i className="fa fa-bell "></i>Notifications / Communication </a>
+                            <Link to="/admin/Notification"><i className="fa fa-bell "></i>Notifications / Communication </Link>
 
                         </li>
                         {/* <li>
@@ -94,7 +94,7 @@ const Head = () => {
                             </ul>
                         </li> */}
                         <li>
-                            <a href="gallery.html"><i className="fa fa-photo "></i>Gallery</a>
+                            <Link to="/admin/GalleryManage"><i className="fa fa-photo "></i>Gallery</Link>
                         </li>
                         <li>
                             <a href="login.html"><i className="fa fa-sign-in "></i>Login Out</a>

@@ -17,7 +17,7 @@ const StudentList = () => {
 
                                     <table className="table table-striped table-bordered table-hover">
                                         <thead>
-                                            <tr>
+                                            <tr style={{background:"#4380b8a1"}}>
                                                 <th>#</th>
                                                 <th>Enrollment-No.</th>
                                                 <th>First Name</th>

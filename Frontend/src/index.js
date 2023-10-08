@@ -6,10 +6,13 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import UserLayout from './Components/User/UserLayout';
 import Home from './Components/User/Home';
 import AdminLayout from './Components/Admin/AdminLayout';
-import Dashboard from './Components/Admin/Dashboard';
 import StudentList from './Components/Admin/StudentList';
+import Notification from './Components/Admin/Notification';
 import SelectedStu from './Components/Admin/SelectedStu';
-import Notification from './Components/Admin/Notification'
+import CompanyManage from './Components/Admin/CompanyManage';
+import Dashboard from './Components/Admin/Dashboard';
+import JobManage from './Components/Admin/JobManage';
+import GalleryManage from './Components/Admin/GalleryManage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +25,9 @@ const router = createBrowserRouter(
         <Route path='StuList' element={<StudentList />} />
         <Route path='SelectStu' element={<SelectedStu />} />
         <Route path='Notification' element={<Notification />} />
+        <Route path='CompanyManage' element={<CompanyManage />} />
+        <Route path='JobManage' element={<JobManage />} />
+        <Route path='GalleryManage' element={<GalleryManage />} />
       </Route>
     </Route>
   )
