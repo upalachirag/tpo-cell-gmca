@@ -9,57 +9,54 @@ const SelectedStu = () => {
                         {/* <!-- /. ROW  --> */}
                         <div className="row">
                             <div className="col-md-6 col-sm-6 col-xs-12">
-                                <div className="panel panel-info">
-                                    <div className="panel-heading" >
-                                        Selected Student List
-                                    </div>
-                                    <div className="panel-body">
-                                        <form role="form">
 
-                                            <table className="table table-striped table-bordered table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Enrollment-No.</th>
-                                                        <th>First Name</th>
-                                                        <th>Company-Name</th>
-                                                        <th>Department</th>
-                                                        <th>Placement Status</th>
+                                <form role="form">
 
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td><span className="label label-danger">2256903266</span></td>
-                                                        <td>Chirag</td>
-                                                        <td><span className="label label-info">CodeVision</span></td>
-                                                        <td>Web development</td>
-                                                        <td> Internship </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td><span className="label label-danger">2256906940005</span></td>
-                                                        <td>Shyam</td>
-                                                        <td><span className="label label-info">Odex</span></td>
-                                                        <td>Web development</td>
-                                                        <td> Internship </td>
-                                                    </tr>
+                                <h1 className='page-head-line'>Selected Student List</h1>
 
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td><span className="label label-danger">2256906940054</span></td>
-                                                        <td>Megha Shankhala</td>
-                                                        <td><span className="label label-info">Odex</span></td>
-                                                        <td>mobile-app development</td>
-                                                        <td> Internship </td>
-                                                    </tr>
-                                                </tbody>
+                                    <table className="table table-striped table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Enrollment-No.</th>
+                                                <th>First Name</th>
+                                                <th>Company-Name</th>
+                                                <th>Department</th>
+                                                <th>Placement Status</th>
 
-                                            </table>
-                                        </form>
-                                    </div>
-                                </div>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><span className="label label-danger">2256903266</span></td>
+                                                <td>Chirag</td>
+                                                <td><span className="label label-info">CodeVision</span></td>
+                                                <td>Web development</td>
+                                                <td> Internship </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><span className="label label-danger">2256906940005</span></td>
+                                                <td>Shyam</td>
+                                                <td><span className="label label-info">Odex</span></td>
+                                                <td>Web development</td>
+                                                <td> Internship </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td><span className="label label-danger">2256906940054</span></td>
+                                                <td>Megha Shankhala</td>
+                                                <td><span className="label label-info">Odex</span></td>
+                                                <td>mobile-app development</td>
+                                                <td> Internship </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </form>
+
                             </div>
 
                         </div>
