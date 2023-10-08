@@ -4,8 +4,7 @@ const Foot = () => {
     return (
         <>
             <div id="footer-sec">
-                &copy; 2014 YourCompany | Design By : <a href="http://www.binarytheme.com/"
-                    target="_blank">BinaryTheme.com</a>
+                &copy; 2014 YourCompany | Design By : <a href="http://www.binarytheme.com/" target="">BinaryTheme.com</a>
             </div>
         </>
     )

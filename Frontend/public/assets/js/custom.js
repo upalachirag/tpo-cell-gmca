@@ -9,7 +9,7 @@
     IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
    
     ========================================================  */
-import jQuery from "jquery";
+
 
 (function ($) {
     "use strict";

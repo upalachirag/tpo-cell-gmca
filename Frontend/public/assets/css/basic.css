@@ -64,18 +64,25 @@ body {
     =============================================*/
 
 
-.navbar-cls-top .navbar-brand {
+.navbar-cls-top {
     color: #fff;
     background: #202020;
-    width: 260px;
+    /* width: 260px; */
     text-align: center;
     height: 75px;
-    font-size: 20px;
-    letter-spacing: 1px;
-    font-weight: 900;
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-weight: 1000;
     padding-top: 25px;
+    margin: 0;
     text-transform:uppercase;
 }
+
+/* .navbar-brand {
+    color: #FFF;
+    font-size: 20px;
+    text-align: center;
+} */
 
 .header-right {
     color: #fff;
@@ -83,10 +90,11 @@ body {
     float: right;
     font-size: 16px;
 }
-
-.navbar-cls-top .navbar-brand:hover {
+/* .navbar-brand:hover */
+.navbar-cls-top {
     background: #202020;
     color: #fff;
+    border-bottom: none;
 }
 
 .user-img-div {
@@ -183,10 +191,10 @@ body {
     background-color: #202020;
 }
 
-.navbar-cls-top {
-    background: #00CA79;
+/* .navbar-cls-top {
+    background: #202020;
     border-bottom: none;
-}
+} */
 
 
 .navbar-default {

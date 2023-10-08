@@ -1,6 +1,4 @@
 import React from 'react'
-import Head from './Head.js'
-import Foot from './Foot.js'
 
 const Notification = () => {
     return (
