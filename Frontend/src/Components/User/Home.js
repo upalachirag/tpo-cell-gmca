@@ -12,6 +12,7 @@ function Home() {
 
     return () => clearTimeout(animationTimeout); // Clear the timeout if the component unmounts
   }, []);
+  
   return (
     <>
 
