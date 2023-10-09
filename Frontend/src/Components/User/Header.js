@@ -6,7 +6,7 @@ function Header() {
         <div>
             <link rel="stylesheet" type="text/css" href="Header.css" />
             <div className="header">
-                <img src="./images/GMCA_LOGO.jpg" class="logo1" />&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="./images/GMCA_LOGO.jpg" className="logo1" />&nbsp;&nbsp;&nbsp;&nbsp;
                 <div className='clg'>
                     <h3>Government MCA College Maninagar</h3>
                     <h4>Training and Placement Cell</h4>

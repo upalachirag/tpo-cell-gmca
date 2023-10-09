@@ -13,6 +13,8 @@ import CompanyManage from './Components/Admin/CompanyManage';
 import Dashboard from './Components/Admin/Dashboard';
 import JobManage from './Components/Admin/JobManage';
 import GalleryManage from './Components/Admin/GalleryManage';
+import EditCompany from './Components/Admin/EditCompany';
+import AddCompany from './Components/Admin/AddCompany';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,9 +27,11 @@ const router = createBrowserRouter(
         <Route path='StuList' element={<StudentList />} />
         <Route path='SelectStu' element={<SelectedStu />} />
         <Route path='Notification' element={<Notification />} />
-        <Route path='CompanyManage' element={<CompanyManage />} />
         <Route path='JobManage' element={<JobManage />} />
         <Route path='GalleryManage' element={<GalleryManage />} />
+        <Route path='CompanyManage' element={<CompanyManage />} />
+        <Route path='EditCompany/:id' element={<EditCompany />} />
+        <Route path='AddCompany' element={<AddCompany />} />
       </Route>
     </Route>
   )

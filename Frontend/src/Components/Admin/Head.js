@@ -67,8 +67,11 @@ const Head = () => {
                         <li>
                             <Link to="/admin/SelectStu"><i className="fa fa-list-ul "></i>Selected Students List</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="/admin/Notification"><i className="fa fa-bell "></i>Notifications</Link>
+                        </li> */}
+                        <li>
+                            <Link to="/admin/Notification"><i className="fa fa-bell "></i>Notifications / Communication </Link>
                         </li>
                         <li>
                             <Link to="/admin/CompanyManage"><i className="fa fa-edit "></i>Company Management</Link>
@@ -77,10 +80,6 @@ const Head = () => {
                             <Link to="/admin/JobManage"><i className="fa fa-upload "></i> Job and Intership Management</Link>
                         </li>
 
-                        <li>
-                            <Link to="/admin/Notification"><i className="fa fa-bell "></i>Notifications / Communication </Link>
-
-                        </li>
                         {/* <li>
                             <a href="/"><i className="fa fa-certificate "></i>Forms <span className="fa arrow"></span></a>
                             <ul className="nav nav-second-level">

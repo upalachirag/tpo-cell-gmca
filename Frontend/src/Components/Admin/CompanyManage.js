@@ -1,6 +1,27 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const CompanyManage = () => {
+
+    const [Company, setCompany] = useState([]);
+    // const [Image, setImage] = useState('');
+
+    useEffect(() => {
+        axios.get('http://localhost:8081/admin/CompanyManage')
+            .then(res => setCompany(res.data))
+            .catch(err => console.log(err));
+    },[])
+
+    // const navigate = useNavigate();
+    const handleDelete = (id) => {
+        axios.delete('http://localhost:8081/deleteCompany/' + id)
+            .then(res => {
+                window.location.reload();
+            })
+            .catch(err => console.log(err));
+    }
+
     return (
         <>
             <div id="wrapper">
@@ -9,53 +30,35 @@ const CompanyManage = () => {
                         <div className="row">
                             <div className="col-md-6 col-sm-6 col-xs-12">
 
-                                <form role="form">
+                                <form >
                                     <h1 className='page-head-line'>Company Managemant</h1>
-
+                                    <Link to="/admin/AddCompany" className="btn btn-lg btn-primary" style={{ marginBottom: '20px' }}>
+                                        Add Company <i className="glyphicon glyphicon-plus"></i>
+                                    </Link>
                                     <table className="table table-striped table-bordered table-hover">
                                         <thead>
-                                            <tr style={{background:"#4380b8a1"}}>
-                                                <th>Title</th>
-                                                <th>Company</th>
-                                                <th>Location</th>
+                                            <tr style={{ background: "#4380b8a1" }}>
+                                                <th>Name</th>
+                                                <th>Logo</th>
                                                 <th>Description</th>
-                                                <th>Skills</th>
-                                                <th>Applicants</th>
-                                                <th>Salary</th>
-                                                <th>Contact</th>
-                                                <th>Last Date</th>
+                                                <th>Technology</th>
+                                                <th>Location</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {/* {% for j in job %} */}
-                                            <tr>
-                                                <td data-label="Title" title="">Title</td>
-                                                <td data-label="Company" title="">Company</td>
-                                                <td data-label="Location" title="">Location</td>
-                                                <td data-label="Description" title="">Description</td>
-                                                <td data-label="Skills" title="">Skills</td>
-                                                <td data-label="Applicants" title="">Applicants</td>
-                                                <td data-label="Salary" title="">Salary</td>
-                                                <td data-label="Contact" title="">Contact</td>
-                                                <td data-label="Last date" title="">Last Date</td>
-                                                <td data-label="Edit"><a href="/" style={{ textDecoration: "none", color: "#008b8b" }}>Edit</a></td>
-                                                <td data-label="Delete"><a href="/" style={{ textDecoration: "none", color: "#008b8b" }}>Delete</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Title" title="">ckhdygd</td>
-                                                <td data-label="Company" title="">sdfdfgdf</td>
-                                                <td data-label="Location" title="">dfddffd</td>
-                                                <td data-label="Description" title="">dfdfsdf</td>
-                                                <td data-label="Skills" title="">hjjhgh</td>
-                                                <td data-label="Applicants" title="">rreree</td>
-                                                <td data-label="Salary" title="">jmjhmjhmj</td>
-                                                <td data-label="Contact" title="">nvnbnm</td>
-                                                <td data-label="Last date" title="">ghjgghghgh</td>
-                                                <td data-label="Edit"><a href="/" style={{ textDecoration: "none", color: "#008b8b" }}>Edit</a></td>
-                                                <td data-label="Delete"><a href="/" style={{ textDecoration: "none", color: "#008b8b" }}>Delete</a></td>
-                                            </tr>
+                                            {Company.map((d, i) => (
+                                                <tr>
+                                                    <td data-label="Name" title="">{d.name}</td>
+                                                    <td data-label="Logo" title=""><img src="" alt='logo' /></td>
+                                                    <td data-label="Description" title="">{d.description}</td>
+                                                    <td data-label="Technology" title="">{d.technology}</td>
+                                                    <td data-label="Location" title="">{d.location}</td>
+                                                    <td data-label="Edit"><Link to={`/admin/EditCompany/${d.id}`}>Edit</Link></td>
+                                                    <td data-label="Delete"><Link onClick={() => handleDelete(d.id)}>Delete</Link></td>
+                                                </tr>
+                                            ))}
                                         </tbody>
                                     </table>
 
