@@ -15,6 +15,8 @@ import JobManage from './Components/Admin/JobManage';
 import GalleryManage from './Components/Admin/GalleryManage';
 import EditCompany from './Components/Admin/EditCompany';
 import AddCompany from './Components/Admin/AddCompany';
+import JobAdd from './Components/Admin/JobAdd';
+import JobEdit from './Components/Admin/JobEdit';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,11 +29,13 @@ const router = createBrowserRouter(
         <Route path='StuList' element={<StudentList />} />
         <Route path='SelectStu' element={<SelectedStu />} />
         <Route path='Notification' element={<Notification />} />
-        <Route path='JobManage' element={<JobManage />} />
-        <Route path='GalleryManage' element={<GalleryManage />} />
         <Route path='CompanyManage' element={<CompanyManage />} />
         <Route path='EditCompany/:id' element={<EditCompany />} />
         <Route path='AddCompany' element={<AddCompany />} />
+        <Route path='JobManage' element={<JobManage />} />
+        <Route path='JobAdd' element={<JobAdd />} />
+        <Route path='JobEdit/:id' element={<JobEdit />} />
+        <Route path='GalleryManage' element={<GalleryManage />} />
       </Route>
     </Route>
   )

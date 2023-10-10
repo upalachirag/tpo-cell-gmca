@@ -8,7 +8,9 @@ const Notification = () => {
                     <div id="page-inner">
                         {/* <!-- /. ROW  --> */}
                         <div className="row">
-                            <div className="col-md-6 col-sm-6 col-xs-12">
+                            <div className="col-md-12 col-sm-6 col-xs-12">
+                                <h1 className='page-head-line'>Notification & Communication</h1>
+                                <h1 class="page-subhead-line">Send Email</h1>
                                 <div className="panel panel-info">
                                     <div className="panel-heading" >
                                         Noification...
@@ -22,7 +24,7 @@ const Notification = () => {
                                             </div>
 
 
-                                            <button type="submit" className="btn btn-info">Send Message </button>
+                                            <button type="submit" className="btn btn-info">Send</button>
 
                                         </form>
                                     </div>

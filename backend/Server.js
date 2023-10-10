@@ -7,6 +7,7 @@ const path = require("path");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -28,7 +29,27 @@ const upload = multer({
     storage: storage
 })
 
-app.get("/jobmanage", (req, res) => {
+//Company Photo
+app.post("/uploadCompanyImage/:id", upload.single('image'), (req, res) => {
+    const image = req.file.filename;
+    const id = req.params.id;
+    const sql = "UPDATE company SET `image`=? WHERE `id`=?";
+    db.query(sql,[image,id], (err, data) => {
+        if(err) return res.json(err);
+        return res.json({Status: "Success"});
+    })
+})
+
+// app.get("/companyImage", (req, res) => {
+//     const sql = "SELECT * FROM company";
+//     db.query(sql, (err, data) => {
+//         if(err) return res.json(err);
+//         return res.json(data);
+//     })
+// })
+
+//Job Managemant
+app.get("/admin/JobManage", (req, res) => {
     const sql = "SELECT * FROM job";
     db.query(sql, (err, data) => {
         if(err) return res.json(err);
@@ -36,16 +57,57 @@ app.get("/jobmanage", (req, res) => {
     })
 })
 
+app.post("/admin/JobAdd", (req, res) => {
+    const sql = "INSERT INTO job (`title`,`description`,`technology`,`salary`,`deadline`,`company_id`,`internship`) VALUES (?)";
+    const values = [
+        req.body.Title,
+        req.body.Description,
+        req.body.Technology,
+        req.body.Salary,
+        req.body.LastDate,        
+        req.body.CompanyId,       
+        req.body.Offer    
+    ]
+    db.query(sql, [values], (err, data) => {
+        if(err) return console.log(err);
+        return res.json("Job Added Succesfully");
+    })
+})
+
+app.put("/admin/JobEdit/:id", (req, res) => {
+    const id = req.params.id;
+    const sql = "UPDATE job SET `title`=?,`description`=?,`technology`=?,`salary`=?,`deadline`=?,`company_id`=?,`internship`=? WHERE id=?";
+    const values = [
+        req.body.Title,
+        req.body.Description,
+        req.body.Technology,
+        req.body.Salary,
+        req.body.LastDate,        
+        req.body.CompanyId,       
+        req.body.Offer    
+    ]
+    db.query(sql, [...values,id], (err, data) => {
+        if(err) return console.log(err);
+        return res.json("Job Updated Succesfully");
+    })
+})
+
+app.delete("/JobDelete/:id", (req, res) => {
+    const sql = "DELETE FROM job WHERE id = ?";
+    const id = req.params.id;
+    db.query(sql, [id], (err, data) => {
+        if(err) return res.json(err);
+        return res.json("Job Deleted Succesfully");
+    })
+})
+
+//Company Managemant
 app.get("/admin/CompanyManage", (req, res) => {
     const sql = "SELECT * FROM company";
     db.query(sql, (err, data) => {
         if(err) return res.json(err);
         return res.json(data);
     })
-})
-
-app.post("/upload", upload.single, (req, res) => {
-
 })
 
 app.post("/admin/AddCompany", (req, res) => {
@@ -77,11 +139,11 @@ app.put("/admin/EditCompany/:id", (req, res) => {
     })
 })
 
-app.delete("/deleteCompany/:id", (req, res) => {
+app.delete("/CompanyDelete/:id", (req, res) => {
     const sql = "DELETE FROM company WHERE id = ?";
     const id = req.params.id;
     db.query(sql, [id], (err, data) => {
-        if(err) return res.json(err);
+        if(err) return console.log(err);
         return res.json("Company Deleted Succesfully");
     })
 })

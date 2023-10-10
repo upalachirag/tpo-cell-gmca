@@ -7,12 +7,12 @@ function Footer() {
       <div className='foot'>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-                <link rel="stylesheet" type="text/css" href="Footer.css" />
+
                 <section id="contact" className="add-padding">
                     <div className="container-text-center">
                         <div className="row">
                             <div className="col-md-4">
-                                <img src="./images/GMCA_LOGO.jpg" className="imgFtlogo" />
+                                <img src="./images/GMCA_LOGO.jpg" className="imgFtlogo rounded" />
                                 <h3>Government MCA College Maninagar</h3>
                                 <h4>Training Placement Cell</h4>
                             </div>
@@ -31,7 +31,6 @@ function Footer() {
                                 <p>Padmashree K.K. Shastri Educational campus, Khokhra Road Ahmedabad (380008)</p>
                                 <p><i className="fas fa-envelope"></i> <a href="mailto:gmcacmniar@gmail.com">gmcacmniar@gmail.com</a></p>
                             </div>
-
                         </div>
                     </div>
                     <p className='right'>&copy; 2023 - ACZ@Developers.com</p>

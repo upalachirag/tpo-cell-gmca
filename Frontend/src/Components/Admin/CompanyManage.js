@@ -15,7 +15,7 @@ const CompanyManage = () => {
 
     // const navigate = useNavigate();
     const handleDelete = (id) => {
-        axios.delete('http://localhost:8081/deleteCompany/' + id)
+        axios.delete('http://localhost:8081/CompanyDelete/' + id)
             .then(res => {
                 window.location.reload();
             })
@@ -28,7 +28,7 @@ const CompanyManage = () => {
                 <div id="page-wrapper">
                     <div id="page-inner">
                         <div className="row">
-                            <div className="col-md-6 col-sm-6 col-xs-12">
+                            <div className="col-md-12 col-sm-6 col-xs-12">
 
                                 <form >
                                     <h1 className='page-head-line'>Company Managemant</h1>
@@ -38,6 +38,7 @@ const CompanyManage = () => {
                                     <table className="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr style={{ background: "#4380b8a1" }}>
+                                                <th>Id</th>
                                                 <th>Name</th>
                                                 <th>Logo</th>
                                                 <th>Description</th>
@@ -46,17 +47,17 @@ const CompanyManage = () => {
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
-                                        </thead>
-                                        <tbody>
+                                        </thead>                                 <tbody>
                                             {Company.map((d, i) => (
                                                 <tr>
-                                                    <td data-label="Name" title="">{d.name}</td>
-                                                    <td data-label="Logo" title=""><img src="" alt='logo' /></td>
-                                                    <td data-label="Description" title="">{d.description}</td>
-                                                    <td data-label="Technology" title="">{d.technology}</td>
-                                                    <td data-label="Location" title="">{d.location}</td>
-                                                    <td data-label="Edit"><Link to={`/admin/EditCompany/${d.id}`}>Edit</Link></td>
-                                                    <td data-label="Delete"><Link onClick={() => handleDelete(d.id)}>Delete</Link></td>
+                                                    <td data-label="Id" >{d.id}</td>
+                                                    <td data-label="Name" >{d.name}</td>
+                                                    <td data-label="Logo" ><img src={`http://localhost:8081/images/`+d.image} height={100} alt='logo' /></td>
+                                                    <td data-label="Description" >{d.description}</td>
+                                                    <td data-label="Technology" >{d.technology}</td>
+                                                    <td data-label="Location" >{d.location}</td>
+                                                    <td data-label="Edit"><Link className="label label-primary" to={`/admin/EditCompany/${d.id}`}>Edit</Link></td>
+                                                    <td data-label="Delete"><Link className="label label-danger" onClick={() => handleDelete(d.id)}>Delete</Link></td>
                                                 </tr>
                                             ))}
                                         </tbody>

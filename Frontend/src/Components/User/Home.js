@@ -12,11 +12,9 @@ function Home() {
 
     return () => clearTimeout(animationTimeout); // Clear the timeout if the component unmounts
   }, []);
-  
+
   return (
     <>
-
-      <link rel="stylesheet" type="text/css" href="Home.css" />
       <div className={`head ${animate ? 'fade-in active' : ''}`}>
         <marquee direction="right" scrollamount="15"><h1>Welcome to Government MCA College Training And Placement Cell</h1></marquee>
       </div>

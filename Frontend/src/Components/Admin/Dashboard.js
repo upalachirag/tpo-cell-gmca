@@ -13,7 +13,7 @@ const Dashboard = () => {
                         </div>
                         {/* <!-- /. ROW  --> */}
                         <div className="row">
-                            <div className="col-md-10">
+                            <div className="col-md-6">
                                 <div className="main-box mb-red">
                                     <a href="/">
                                         <i className="fa fa-bolt fa-5x"></i>
@@ -21,7 +21,7 @@ const Dashboard = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-md-10">
+                            <div className="col-md-6">
                                 <div className="main-box mb-dull">
                                     <a href="/">
                                         <i className="fa fa-plug fa-5x"></i>
@@ -29,7 +29,7 @@ const Dashboard = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-md-10">
+                            <div className="col-md-6">
                                 <div className="main-box mb-pink">
                                     <a href="/">
                                         <i className="fa fa-dollar fa-5x"></i>
@@ -37,7 +37,7 @@ const Dashboard = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-md-10">
+                            <div className="col-md-6">
                                 <div className="main-box mb-red">
                                     <a href="/">
                                         <i className="fa fa-dollar fa-5x"></i>
