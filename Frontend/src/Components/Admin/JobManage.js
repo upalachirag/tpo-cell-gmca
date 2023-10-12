@@ -29,7 +29,7 @@ const JobManage = () => {
                         <div className="row">
                             <div className="col-md-12 col-sm-6 col-xs-12">
 
-                                <form role="form">
+                                <form>
                                     <h1 className='page-head-line'>Job & Internship Managemant</h1>
                                     <Link to="/admin/JobAdd" className="btn btn-lg btn-primary" style={{ marginBottom: '20px' }}>
                                         Add Job/Internship <i className="glyphicon glyphicon-plus"></i>

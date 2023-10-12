@@ -1,5 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// Import CSS File
+import './assets/css/bootstrap.css'
+import './assets/css/font-awesome.css'
+import './assets/css/basic.css'
+import './assets/css/custom.css'
 
 const Head = () => {
     return (

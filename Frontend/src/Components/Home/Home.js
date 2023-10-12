@@ -1,14 +1,13 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 // import { Helmet } from 'react-helmet';
+import ScriptTag from 'react-script-tag';
 // Vendor CSS Files
 import './assets2/vendor/bootstrap/css/bootstrap.min.css';
 import './assets2/vendor/bootstrap-icons/bootstrap-icons.css';
 import './assets2/vendor/glightbox/css/glightbox.min.css';
 import './assets2/vendor/swiper/swiper-bundle.min.css';
 import './assets2/vendor/aos/aos.css';
-// Template Main CSS File
+// // Template Main CSS File
 import './assets2/css/main.css';
 
 const RecuriterItem = ({ category, title, imageSrc }) => (
@@ -226,7 +225,7 @@ function Home() {
                 </div>
             </section>
             <section id="contact" className="contact">
-                <Header />
+
                 {/* Section Title */}
                 <div className="container section-title" data-aos="fade-up">
                     <h2>Contact Us</h2>
@@ -348,6 +347,18 @@ function Home() {
                 <!-- Template Main JS File -->
                 <script src="assets/js/main.js"></script>
             </Helmet> */}
+
+            {/* <!-- Vendor JS Files --> */}
+            <ScriptTag type="text/javascript" src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></ScriptTag>
+            <ScriptTag type="text/javascript" src="./assets/vendor/glightbox/js/glightbox.min.js"></ScriptTag>
+            <ScriptTag type="text/javascript" src="./assets/vendor/purecounter/purecounter_vanilla.js"></ScriptTag>
+            <ScriptTag type="text/javascript" src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></ScriptTag>
+            <ScriptTag type="text/javascript" src="./assets/vendor/swiper/swiper-bundle.min.js"></ScriptTag>
+            <ScriptTag type="text/javascript" src="./assets/vendor/aos/aos.js"></ScriptTag>
+            <ScriptTag type="text/javascript" src="./assets/vendor/php-email-form/validate.js"></ScriptTag>
+
+            {/* <!-- Template Main JS File --> */}
+            <ScriptTag type="text/javascript" src="./assets/js/main.js"></ScriptTag>
         </>
 
     )

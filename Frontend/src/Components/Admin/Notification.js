@@ -17,7 +17,7 @@ const Notification = () => {
                                     </div>
                                     <div className="panel-body">
 
-                                        <form role="form">
+                                        <form >
                                             <div className="form-group">
                                                 <label>Text area</label>
                                                 <textarea className="form-control" rows="3"></textarea>

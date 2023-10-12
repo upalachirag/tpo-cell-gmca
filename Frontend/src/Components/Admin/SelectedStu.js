@@ -10,7 +10,7 @@ const SelectedStu = () => {
                         <div className="row">
                             <div className="col-md-12 col-sm-6 col-xs-12">
 
-                                <form role="form">
+                                <form>
 
                                 <h1 className='page-head-line'>Selected Student List</h1>
                                     <table className="table table-striped table-bordered table-hover">
