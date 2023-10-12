@@ -1,6 +1,57 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+// import * as XLSX from 'xlsx';
 
 const StudentList = () => {
+
+    // onchange states
+    const [excelFile, setExcelFile] = useState(null);
+    const [typeError, setTypeError] = useState(null);
+    const [StudentList, setStudentList] = useState([])
+
+    useEffect( () => {
+        axios.get('http://localhost:8081/admin/StudentList')
+        .then(res => setStudentList(res.data))
+        .catch(err => console.log(err));
+    })
+
+    // onchange event
+    const handleFile = (e) => {
+        let fileTypes = ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'text/csv'];
+        let selectedFile = e.target.files[0];
+        setExcelFile(e.target.files[0]);
+        if (selectedFile) {
+            if (selectedFile && fileTypes.includes(selectedFile.type)) {
+                setTypeError(null);
+            }
+            else {
+                setTypeError('Please select only excel file types');
+                setExcelFile(null);
+            }
+        }
+        else {
+            console.log('Please select your file');
+        }
+    }
+
+    // submit event
+    const handleFileSubmit = (e) => {
+        e.preventDefault();
+        const formdata = new FormData();
+        formdata.append('excel', excelFile);
+        axios.post('http://localhost:8081/excelupload', formdata)
+            .then(res => {
+                if (res.data.Status === "Success") {
+                    console.log("Student List Uploaded Successfully");
+                } else {
+                    console.log("Student List Upload Operation Failed");
+                }
+            })
+            .catch(err => console.log(err));
+        document.getElementById('excel').value= null;
+    }
+
+
     return (
         <>
             <div id="wrapper">
@@ -9,15 +60,22 @@ const StudentList = () => {
                         {/* <!-- /. ROW  --> */}
                         <div className="row">
                             <div className="col-md-12 col-sm-6 col-xs-12">
-                                <form role="form">
-
+                                <form >
                                     <h1 className='page-head-line'>Student List</h1>
+                                    <form className="form-inline" style={{ marginBottom: "15px" }} >
+                                    <label htmlFor="company_logo">Excel File:</label>
+                                        <input type="file" id='excel' className="form-control-file" required onChange={handleFile} />
+                                        <button type="submit" className="btn btn-success btn-md" onClick={handleFileSubmit}>UPLOAD</button>
+                                    </form>
+                                        {typeError && (
+                                            <div className="alert alert-danger" role="alert">{typeError}</div>
+                                        )}
 
-                                    <button type="submit" className="btn btn-info" style={{ marginBottom: "15px" }}> Upload Excel file </button>
+                                    {/* <button type="submit" className="btn btn-info" style={{ marginBottom: "15px" }}> Upload Excel file </button> */}
 
                                     <table className="table table-striped table-bordered table-hover">
                                         <thead>
-                                            <tr style={{background:"#4380b8a1"}}>
+                                            <tr style={{ background: "#4380b8a1" }}>
                                                 <th>Id</th>
                                                 <th>Enrollment No.</th>
                                                 <th>Full Name</th>
@@ -26,34 +84,15 @@ const StudentList = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        {StudentList.map((d,i)=>(
                                             <tr>
-                                                <td>1</td>
-                                                <td><span className="label label-danger">Mark</span></td>
-                                                <td>Otto</td>
-                                                <td><span className="label label-info">100090</span></td>
-                                                <td> abc12@gmail.com</td>
+                                                <td>{d.id}</td>
+                                                <td>{d.enroll}</td>
+                                                <td>{d.name}</td>
+                                                <td>{d.mobile}</td>
+                                                <td>{d.email}</td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>100090</td>
-                                                <td> abc12@gmail.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Larry</td>
-                                                <td><span className="label label-danger">the Bird</span> </td>
-                                                <td>100090</td>
-                                                <td> abc12@gmail.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td><span className="label label-success">Mark</span></td>
-                                                <td>Otto</td>
-                                                <td><span className="label label-info">100090</span></td>
-                                                <td> abc12@gmail.com</td>
-                                            </tr>
+                                            ))}
                                         </tbody>
                                     </table>
                                 </form>

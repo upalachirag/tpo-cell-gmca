@@ -56,11 +56,12 @@
     margin-bottom: 40px;
 }
 
-.main-box a,
-.main-box a:hover {
+.main-box div{
     color: #fff;
-    text-decoration: none;
+}
 
+.main-box div:hover {
+    color: rgb(236, 236, 236);
 }
 
 .mb-dull {
@@ -73,6 +74,10 @@
 
 .mb-pink {
     background-color: #FF2F71;
+}
+
+.mb-blue {
+    background-color: #6346ca;
 }
 
 .main-box h5 {

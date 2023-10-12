@@ -15,41 +15,60 @@ const Dashboard = () => {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="main-box mb-red">
-                                    <a href="/">
-                                        <i className="fa fa-bolt fa-5x"></i>
-                                        <h5> Students </h5>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="main-box mb-dull">
-                                    <a href="/">
-                                        <i className="fa fa-plug fa-5x"></i>
-                                        <h5> Companies </h5>
-                                    </a>
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <i className="fa fa-user fa-5x"></i>
+                                            <h5>Total Students</h5>
+                                        </div>
+                                        <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
+                                            20
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="main-box mb-pink">
-                                    <a href="/">
-                                        <i className="fa fa-dollar fa-5x"></i>
-                                        <h5> Selected Students </h5>
-                                    </a>
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <i className="fa fa-tasks fa-5x"></i>
+                                            <h5>Placement Drive </h5>
+                                        </div>
+                                        <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
+                                            20
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <div className="main-box mb-red">
-                                    <a href="/">
-                                        <i className="fa fa-dollar fa-5x"></i>
-                                        <h5> Selected Students </h5>
-                                    </a>
+                                <div className="main-box mb-blue">
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <i className="fa fa-th-list fa-5x"></i>
+                                            <h5> Selected Students </h5>
+                                        </div>
+                                        <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
+                                            20
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
+                            <div className="col-md-6">
+                                <div className="main-box mb-dull">
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <i className="fa fa-users fa-5x"></i>
+                                            <h5> Total Companies </h5>
+                                        </div>
+                                        <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
+                                            20
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         {/* <!-- /. ROW  --> */}
 
-                        
+
                         <hr />
                         <div className="row">
 
