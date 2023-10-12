@@ -1,4 +1,12 @@
 import React from 'react';
+// Vendor CSS Files
+import './assets2/vendor/bootstrap/css/bootstrap.min.css';
+import './assets2/vendor/bootstrap-icons/bootstrap-icons.css';
+import './assets2/vendor/glightbox/css/glightbox.min.css';
+import './assets2/vendor/swiper/swiper-bundle.min.css';
+import './assets2/vendor/aos/aos.css';
+// Template Main CSS File
+import './assets2/css/main.css';
 
 class Header extends React.Component {
   render() {

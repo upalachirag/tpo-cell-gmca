@@ -2,14 +2,14 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 // import { Helmet } from 'react-helmet';
-// Vendor CSS Files
-import './assets/vendor/bootstrap/css/bootstrap.min.css';
-import './assets/vendor/bootstrap-icons/bootstrap-icons.css';
-import './assets/vendor/glightbox/css/glightbox.min.css';
-import './assets/vendor/swiper/swiper-bundle.min.css';
-import './assets/vendor/aos/aos.css';
-// Template Main CSS File
-import './assets/css/main.css';
+// // Vendor CSS Files
+// import './assets2/vendor/bootstrap/css/bootstrap.min.css';
+// import './assets2/vendor/bootstrap-icons/bootstrap-icons.css';
+// import './assets2/vendor/glightbox/css/glightbox.min.css';
+// import './assets2/vendor/swiper/swiper-bundle.min.css';
+// import './assets2/vendor/aos/aos.css';
+// // Template Main CSS File
+// import './assets2/css/main.css';
 
 const RecuriterItem = ({ category, title, imageSrc }) => (
     <div className={`col-lg-4 col-md-6 portfolio-item isotope-item ${category}`}>
