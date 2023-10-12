@@ -1,14 +1,14 @@
 import React from 'react';
 // import { Helmet } from 'react-helmet';
-import ScriptTag from 'react-script-tag';
-// Vendor CSS Files
-import './assets2/vendor/bootstrap/css/bootstrap.min.css';
-import './assets2/vendor/bootstrap-icons/bootstrap-icons.css';
-import './assets2/vendor/glightbox/css/glightbox.min.css';
-import './assets2/vendor/swiper/swiper-bundle.min.css';
-import './assets2/vendor/aos/aos.css';
+// import ScriptTag from 'react-script-tag';
+// // Vendor CSS Files
+// import './assets2/vendor/bootstrap/css/bootstrap.min.css';
+// import './assets2/vendor/bootstrap-icons/bootstrap-icons.css';
+// import './assets2/vendor/glightbox/css/glightbox.min.css';
+// import './assets2/vendor/swiper/swiper-bundle.min.css';
+// import './assets2/vendor/aos/aos.css';
 // // Template Main CSS File
-import './assets2/css/main.css';
+// import './assets2/css/main.css';
 
 const RecuriterItem = ({ category, title, imageSrc }) => (
     <div className={`col-lg-4 col-md-6 portfolio-item isotope-item ${category}`}>
@@ -300,7 +300,7 @@ function Home() {
                     <div className="row gy-4">
                         <div className="col-lg-6 col-md-12 footer-about">
                             <a href="index.html" className="d-flex align-items-center">
-                                <img src="assets2/img/GMCA.png" width={500} alt="Logo" />
+                                <img src="images/GMCA.png" width={500} alt="Logo" />
                             </a>
                             <a href="index.html" className="logo d-flex align-items-center" style={{ marginTop: "40px" }}>
                                 <span>GMCA Training & Placement Cell</span>
@@ -349,16 +349,16 @@ function Home() {
             </Helmet> */}
 
             {/* <!-- Vendor JS Files --> */}
-            <ScriptTag type="text/javascript" src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></ScriptTag>
-            <ScriptTag type="text/javascript" src="./assets/vendor/glightbox/js/glightbox.min.js"></ScriptTag>
-            <ScriptTag type="text/javascript" src="./assets/vendor/purecounter/purecounter_vanilla.js"></ScriptTag>
-            <ScriptTag type="text/javascript" src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></ScriptTag>
-            <ScriptTag type="text/javascript" src="./assets/vendor/swiper/swiper-bundle.min.js"></ScriptTag>
-            <ScriptTag type="text/javascript" src="./assets/vendor/aos/aos.js"></ScriptTag>
-            <ScriptTag type="text/javascript" src="./assets/vendor/php-email-form/validate.js"></ScriptTag>
+            {/* <script type="text/javascript" src="./assets2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script type="text/javascript" src="./assets2/vendor/glightbox/js/glightbox.min.js"></script>
+            <script type="text/javascript" src="./assets2/vendor/purecounter/purecounter_vanilla.js"></script>
+            <script type="text/javascript" src="./assets2/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+            <script type="text/javascript" src="./assets2/vendor/swiper/swiper-bundle.min.js"></script>
+            <script type="text/javascript" src="./assets2/vendor/aos/aos.js"></script>
+            <script type="text/javascript" src="./assets2/vendor/php-email-form/validate.js"></script> */}
 
             {/* <!-- Template Main JS File --> */}
-            <ScriptTag type="text/javascript" src="./assets/js/main.js"></ScriptTag>
+            {/* <script type="text/javascript" src="./assets2/js/main.js"></script> */}
         </>
 
     )

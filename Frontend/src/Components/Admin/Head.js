@@ -19,9 +19,9 @@ const Head = () => {
             {/* <link href="assets/css/custom.css" rel="stylesheet" /> */}
             {/* <!-- GOOGLE FONTS--> */}
             {/* <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> */}
-            <nav className="navbar navbar-cls-top" role="navigation" >
-                <div className="navbar-header">
-                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+            <nav className="anavbar anavbar-cls-top" role="navigation" >
+                <div className="anavbar-header">
+                    <button type="button" className="anavbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                         <span className="sr-only">Toggle navigation</span>
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
@@ -41,9 +41,9 @@ const Head = () => {
                 </div> */}
             </nav>
             {/* <!-- /. NAV TOP  --> */}
-            <nav className="navbar-default navbar-side" role="navigation">
+            <nav className="anavbar-default anavbar-side" role="navigation">
                 <div className="sidebar-collapse">
-                    <ul className="nav" id="main-menu">
+                    <ul className="anav" id="main-menu">
                         <li>
                             <div className="user-img-div">
                                 <img src="assets/img/user.png" className="img-thumbnail" alt='Admin pic' />

@@ -23,8 +23,7 @@ import JobEdit from './Components/Admin/JobEdit';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path='/' element={<Home />} >
-      </Route>
+      <Route path='/' element={<Home />} ></Route>
       <Route path='admin/' element={<AdminLayout />}>
         <Route path='' element={<Dashboard />} />
         <Route path='StuList' element={<StudentList />} />
