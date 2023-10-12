@@ -5,43 +5,25 @@ function Footer() {
     <footer id="footer" className="footer">
       <div className="container footer-top">
         <div className="row gy-4">
-          <div className="col-lg-5 col-md-12 footer-about">
-            <a href="index.html" className="logo d-flex align-items-center">
-            <img src="assets2/img/GMCA_LOGO.jpg" alt="Logo" />
-              <span>GMCA TPO</span>
-
+          <div className="col-lg-6 col-md-12 footer-about">
+            <a href="index.html" className="d-flex align-items-center">
+            <img src="assets2/img/GMCA.png" width={500} alt="Logo" />
             </a>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-            <div className="social-links d-flex mt-4">
-              <a href="/"><i className="bi bi-twitter"></i></a>
-              <a href="/"><i className="bi bi-facebook"></i></a>
-              <a href="/"><i className="bi bi-instagram"></i></a>
-              <a href="/"><i className="bi bi-linkedin"></i></a>
-            </div>
+            <a href="index.html" className="logo d-flex align-items-center" style={{marginTop:"40px"}}>
+              <span>GMCA Training & Placement Cell</span>
+            </a>
           </div>
 
-          <div className="col-lg-2 col-6 footer-links">
+          <div className="col-lg-3 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/">About us</a></li>
-              <li><a href="/">Company</a></li>
-              <li><a href="/">Student</a></li>
-              <li><a href="/">Admin</a></li>
+              <li><a target="_blank" rel="noreferrer" href="https://www.gmca.ac.in/">Government MCA College</a></li>
+              <li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/school/government-mca-college-maninagar-ahmedabad/about/">LinkedIn-GMCA</a></li>
+              <li><a target="_blank" rel="noreferrer" href="https://www.gtu.ac.in/">Gujarat Technological University</a></li>
+              <li><a target="_blank" rel="noreferrer" href="https://gujacpc.admissions.nic.in/">ACPC</a></li>
+              {/* <li><a href="/">Admin</a></li> */}
             </ul>
           </div>
-
-          <div className="col-lg-2 col-6 footer-links">
-            <h4>Our Recuriters</h4>
-            <ul>
-              <li><a href="/">Arastu</a></li>
-              <li><a href="/">Codevisio</a></li>
-              <li><a href="/">Gateway</a></li>
-              <li><a href="/">Innvonix</a></li>
-              <li><a href="/">Webs Optimization</a></li>
-            </ul>
-          </div>
-
           <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h4>Contact Us</h4>
             <p>Government MCA College Maninagar</p>

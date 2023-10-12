@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import UserLayout from './Components/User/UserLayout';
-import Home from './Components/User/Home';
+// import UserLayout from './Components/User/UserLayout';
+// import Home from './Components/User/Home';
+import Home from './Components/Home'
 import AdminLayout from './Components/Admin/AdminLayout';
 import StudentList from './Components/Admin/StudentList';
 import Notification from './Components/Admin/Notification';
@@ -21,8 +22,7 @@ import JobEdit from './Components/Admin/JobEdit';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path='/' element={<UserLayout />} >
-        <Route path='' element={<Home />} />
+      <Route path='/' element={<Home />} >
       </Route>
       <Route path='admin/' element={<AdminLayout />}>
         <Route path='' element={<Dashboard />} />

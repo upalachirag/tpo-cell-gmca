@@ -17,11 +17,12 @@ class Header extends React.Component {
           {/* Nav Menu */}
           <nav id="navmenu" className="navmenu">
             <ul>
-              <li><a href="/" className="active">Home</a></li>
-              <li><a href="about">About</a></li>
-              <li><a href="recruiter">Recruiter</a></li>
-              <li><a href="/">Student</a></li>
-              <li><a href="/">Admin</a></li>
+              <li><a href="#hero" className="active">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#recruiter">Recruiter</a></li>
+              <li><a href="#contact">Contact</a></li>
+              {/* <li><a href="/">Admin</a></li>
+              <li><a href="/">Student</a></li> */}
               <li className="dropdown has-dropdown"><a href="/"><span>Placement statistics</span> <i className="bi bi-chevron-down"></i></a>
                 <ul className="dd-box-shadow">
                   <li><a href="/">2022</a></li>
@@ -30,13 +31,12 @@ class Header extends React.Component {
                   <li><a href="/">2019</a></li>
                 </ul>
               </li>
-              <li><a href="contact">Contact</a></li>
             </ul>
 
             <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>{/* End Nav Menu */}
 
-          <a className="btn-getstarted" href="about">Get Started</a>
+          <a className="btn-getstarted" href="about">Sign In</a>
 
         </div>
       </header>

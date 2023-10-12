@@ -13,7 +13,6 @@ import './assets/css/main.css';
 
 const RecuriterItem = ({ category, title, imageSrc }) => (
     <div className={`col-lg-4 col-md-6 portfolio-item isotope-item ${category}`}>
-        <Header />
         <img src={imageSrc} className="img-fluid" alt={title} />
         <div className="portfolio-info">
             <h4>{title}</h4>
@@ -100,7 +99,7 @@ function Home() {
                                 <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
                                     <div className="icon-box">
                                         <i className="bi bi-buildings"></i>
-                                        <h3>Traning And Placement Cell</h3> 
+                                        <h3>Traning And Placement Cell</h3>
                                         <p> The college also has a very active Training & Placement section.
                                             I invite you to have a look at the profile of our Final and pre Final year students.
                                             These trendy classrooms have comfortable seating arrangements with all modern teaching aids like LCD Projector and VCD players.
@@ -166,9 +165,9 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section id="portfolio" className="portfolio">
+            <section id="recruiter" className="portfolio">
                 <div className="container section-title" data-aos="fade-up">
-                    <h2>Recuriter</h2>
+                    <h2>Top Recruiter</h2>
                 </div>
                 <div className="container">
                     <div
@@ -194,7 +193,7 @@ function Home() {
                 <Header />
                 {/* Section Title */}
                 <div className="container section-title" data-aos="fade-up">
-                    <h2>Contact</h2>
+                    <h2>Contact Us</h2>
                 </div>
                 {/* End Section Title */}
 
