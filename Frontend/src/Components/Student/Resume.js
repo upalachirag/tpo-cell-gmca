@@ -13,10 +13,10 @@ function Resume() {
 
                                     <section>
 
-                                        <label for="resume" className="form-label">Choose your resume file</label>
+                                        <label htmlfor="resume" className="form-label">Choose your resume file</label>
                                         <div className="custom-file">
                                             <input type="file" className="custom-file-input" id="resume" name="resume" />
-                                            <label className="custom-file-label" for="resume">Select file</label>
+                                            <label className="custom-file-label" htmlfor="resume">Select file</label>
                                         </div>
                                     </section>
                                 </div>

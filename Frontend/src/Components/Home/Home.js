@@ -118,7 +118,7 @@ function Home() {
                 <div className="container" data-aos="fade-up" data-aos-delay="100">
                     <div className="row align-items-xl-center gy-5">
                         <div className="col-xl-5 content">
-                            <h3>About Us</h3>
+                            <h3 style={{fontSize:"22px"}}>About Us</h3>
                             <h2>Government MCA College, Maninagar, Ahmedabad</h2>
                             <p> Government MCA College (Maninagar) helps students realize their potential for growth and success through innovative instruction in a nurturing, diverse environment.
                                 Students achieve their career and personal goals, strengthening the region's social and economic vibrancy.
@@ -130,7 +130,7 @@ function Home() {
                             {/* <a href="about" className="read-more"><span>Read More</span><i className="bi bi-arrow-right"></i></a> */}
                         </div>
 
-                        <div className="col-xl-7">
+                        <div className="col-xl-7" style={{marginTop:"50px"}}>
                             <div className="row gy-4 icon-boxes">
                                 <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
                                     <div className="icon-box">

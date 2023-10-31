@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
                     <nav className="sidebar-nav">
                         <ul id="sidebarnav" className="p-t-30">
                             <li className="sidebar-item">
-                                <Link className="sidebar-link waves-effect waves-dark sidebar-link" to="" aria-expanded="false">
+                                <Link className="sidebar-link waves-effect waves-dark sidebar-link" to="/student" aria-expanded="false">
                                     <i className="mdi mdi-view-dashboard"></i>
                                     <span className="hide-menu">Dashboard</span>
                                 </Link>
