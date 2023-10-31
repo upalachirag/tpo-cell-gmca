@@ -17,6 +17,72 @@ const db = mysql.createConnection({
     database: "tpocell"
 });
 
+//signup & signin
+app.post("/signup", (req, res) => {
+    // const name = req.body.values.name;
+    // const enroll = req.body.values.enroll;
+    // const email = req.body.values.email;
+    // const password = req.body.values.password;
+    const values = [
+        req.body.name,
+        req.body.enroll,
+        req.body.email,
+        req.body.password
+    ]
+    // console.log(values);
+    const sql = "INSERT INTO sregistration (`name`,`enroll`,`email`,`password`) VALUES (?)";
+    db.query(sql, [values], (err, data) => {
+        if (err) return console.log(err);
+        return res.json("User Added Succesfully");
+    })
+    // const sql2 = "SELECT * FROM student WHERE enroll = ?"
+    
+    // db.query(sql2,[enroll],(err,data)=>
+    // {
+    //     if(err) return res.json(err);
+    //     if(data.legnth > 0){
+    //         console.log(data);
+    //     }else{
+    //         console.log("no Data")
+    //         return res.json({signup: false});
+    //     }
+    // })
+})
+
+app.post("/signin", (req, res) => {
+    const sql = "SELECT * FROM sregistration WHERE email = ? AND password = ?";
+    db.query(sql, [req.body.email,req.body.password], (err, data) => {
+        if (err) return console.log(err);
+        if(data.length > 0){
+            return res.json({signin: true});
+        } else {
+            return res.json({signin: false});
+        }
+    })
+    
+})
+
+app.post("/asignin", (req, res) => {
+    const sql = "SELECT * FROM admin WHERE email = ? AND password = ?";
+    db.query(sql, [req.body.email,req.body.password], (err, data) => {
+        if (err) return console.log(err);
+        if(data.length > 0){
+            return res.json({signin: true});
+        } else {
+            return res.json({signin: false});
+        }
+    })
+    
+})
+
+app.get("/checkenroll", (req, res) => {
+    const sql = "SELECT enroll FROM student";
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data);
+    })
+})
+
 //Company Photo
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {

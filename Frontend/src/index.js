@@ -5,6 +5,9 @@ import reportWebVitals from './reportWebVitals';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 //Home
 import Home from './Components/Home/Home';
+import SignIn from './Components/SignIn';
+import ASignIn from './Components/ASignIn';
+import SignInAS from './Components/SignInAs';
 
 //Admin
 import AdminLayout from './Components/Admin/AdminLayout';
@@ -20,10 +23,34 @@ import AddCompany from './Components/Admin/AddCompany';
 import JobAdd from './Components/Admin/JobAdd';
 import JobEdit from './Components/Admin/JobEdit';
 
+//student
+import SDashboard from './Components/Student/SDashboard'
+import Offerletter from './Components/Student/Offerletter'
+import Placement from './Components/Student/Placement'
+import Profile from './Components/Student/Profile'
+import Resume from './Components/Student/Resume'
+import Header from './Components/Student/Header'
+import Footer from './Components/Student/Footer'
+import Navbar from './Components/Student/Navbar'
+
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path='/' element={<Home />} ></Route>
+      <Route path='/signinas' element={<SignInAS />} ></Route>
+      <Route path='/signin' element={<SignIn />} ></Route>
+      <Route path='/asignin' element={<ASignIn />} ></Route>
+      <Route path='student/'>
+        <Route path='' element={<SDashboard />} ></Route>
+        <Route path='profile' element={<Profile />} ></Route>
+        <Route path='placement' element={<Placement />} ></Route>
+        <Route path='resume' element={<Resume />} ></Route>
+        <Route path='offerletter' element={<Offerletter />} ></Route>
+        <Route path='nav' element={<Navbar />} ></Route>
+        <Route path='header' element={<Header />} ></Route>
+        <Route path='footer' element={<Footer />} ></Route>
+      </Route>
       <Route path='admin/' element={<AdminLayout />}>
         <Route path='' element={<Dashboard />} />
         <Route path='StuList' element={<StudentList />} />

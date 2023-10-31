@@ -101,7 +101,7 @@ const Head = () => {
                             <Link to="/admin/GalleryManage"><i className="fa fa-photo "></i>Gallery</Link>
                         </li>
                         <li>
-                            <a href="/admin"><i className="fa fa-sign-in "></i>Login Out</a>
+                            <a href="/"><i className="fa fa-sign-in "></i>Login Out</a>
                         </li>
                     </ul>
 

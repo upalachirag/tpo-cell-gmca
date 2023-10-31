@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Helmet } from 'react-helmet';
 // import ScriptTag from 'react-script-tag';
 // // Vendor CSS Files
@@ -11,7 +12,7 @@ import React from 'react';
 // import './assets2/css/main.css';
 
 const RecuriterItem = ({ category, title, imageSrc }) => (
-    <div className={`col-lg-4 col-md-6 portfolio-item isotope-item ${category}`}>
+    <div className={`col-lg-4 col-md-4 isotope-item ${category}`}>
         <img src={imageSrc} className="img-fluid" alt={title} />
         <div className="portfolio-info">
             <h4>{title}</h4>
@@ -94,7 +95,7 @@ function Home() {
                         <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
                     </nav>{/* End Nav Menu */}
 
-                    <a className="btn-getstarted" href="about">Sign In</a>
+                    <Link className="btn-getstarted" to="/signinas">Sign In</Link>
 
                 </div>
             </header>
@@ -169,7 +170,7 @@ function Home() {
                 <div className="container ">
                     <div className="align-items: center">
                         <div className="row gy-4">
-                            <div className="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div className="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="100">
                                 <article>
                                     <div className="post-img">
                                         <img src="assets2/img/Bhavesh Sir.jpg" alt="" className="img-fluid" />
@@ -182,12 +183,24 @@ function Home() {
                                 </article>
                             </div>
 
-                            <div className="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div className="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
                                 <article>
                                     <div className="post-img">
                                         <img src="assets2/img/Darshan Sir.jpg" alt="" className="img-fluid" />
                                     </div>
                                     <p className="post-category">Darshan Modi</p>
+                                    <h2 className="title">
+                                        <a href="blog-details.html">Training & Placement Coordinator</a>
+                                    </h2>
+
+                                </article>
+                            </div>
+                            <div className="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                                <article>
+                                    <div className="post-img">
+                                        <img src="" alt="Jaimin sir pic" className="img-fluid" />
+                                    </div>
+                                    <p className="post-category">Jaimin B. Dave</p>
                                     <h2 className="title">
                                         <a href="blog-details.html">Training & Placement Coordinator</a>
                                     </h2>
@@ -298,7 +311,7 @@ function Home() {
             <footer id="footer" className="footer">
                 <div className="container footer-top">
                     <div className="row gy-4">
-                        <div className="col-lg-6 col-md-12 footer-about">
+                        <div className="col-lg-7 col-md-12 footer-about">
                             <a href="index.html" className="d-flex align-items-center">
                                 <img src="images/GMCA.png" width={500} alt="Logo" />
                             </a>
@@ -307,7 +320,7 @@ function Home() {
                             </a>
                         </div>
 
-                        <div className="col-lg-3 col-6 footer-links">
+                        <div className="col-lg-2 col-6 footer-links">
                             <h4>Useful Links</h4>
                             <ul>
                                 <li><a target="_blank" rel="noreferrer" href="https://www.gmca.ac.in/">Government MCA College</a></li>
