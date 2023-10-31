@@ -1,62 +1,35 @@
-import React from 'react';
-import Footer from './Footer';
-import Navbar from './Navbar';
-import Header from './Header';
-import './style.css'
+import React from 'react'
 
-class Resume extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isChecked: false,
-    };
-  }
-
-  handleCheckboxChange = () => {
-    this.setState((prevState) => ({ isChecked: !prevState.isChecked }));
-  };
-
-  render() {
-    const { isChecked } = this.state;
-
+function Resume() {
     return (
-      <div>
-        <input
-          type="checkbox"
-          id="checkbox"
-          checked={isChecked}
-          onChange={this.handleCheckboxChange}
-        />
-        <Header />
-        <div className="body">
-          <Navbar />
-          <section className="section-1">
-            <h1 className="heading">Upload Resume</h1>
-            <section className="form-container">
-              <form style={formStyles}>
-                <div className="box-container">
-                  <p className="form-label">Upload your Resume:</p>
-                  <input type="file" accept=".pdf" className="file-input" id="pdfInput" />
-                  <button type="submit" className="btn btn-primary">
-                    Upload Resume
-                  </button>
+        <>
+            <div className="page-wrapper">
+                <div className="container-fluid">
+                    <div className="card">
+                        <div className="card-body wizard-content">
+                            <h4 className="card-title">Upload Resume</h4>
+                            <form id="example-form" action="#" className="m-t-40">
+                                <div>
+
+                                    <section>
+
+                                        <label for="resume" className="form-label">Choose your resume file</label>
+                                        <div className="custom-file">
+                                            <input type="file" className="custom-file-input" id="resume" name="resume" />
+                                            <label className="custom-file-label" for="resume">Select file</label>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div className="text-left">
+                                    <button type="submit" className="btn btn-success">Upload</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-              </form>
-            </section>
-          </section>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+            </div>
+        </>
+    )
 }
 
-const formStyles = {
-  padding: '20px',
-  backgroundColor: '#f7f7f7',
-  borderRadius: '10px',
-  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-  textAlign: 'center',
-};
-
-export default Resume;
+export default Resume

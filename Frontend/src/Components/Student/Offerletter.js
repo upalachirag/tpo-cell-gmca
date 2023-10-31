@@ -1,52 +1,35 @@
-import React from 'react';
-import Footer from './Footer';
-import Navbar from './Navbar';
-import Header from './Header';
-import './style.css'
+import React from 'react'
 
-class Offerletter extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            isChecked: false,
-        };
-    }
+function Offerletter() {
+    return (
+        <>
+            <div className="page-wrapper">
+                <div className="container-fluid">
+                    <div className="card">
+                        <div className="card-body wizard-content">
+                            <h4 className="card-title">Upload Offer Letter</h4>
+                            <h6 className="card-subtitle"></h6>
+                            <form id="example-form" action="#" className="m-t-40">
+                                <div>
+                                    <section>
+                                        <label for="letter" className="form-label">Choose your Offerletter file</label>
+                                        <div className="custom-file">
+                                            <input type="file" className="custom-file-input" id="letter" name="letter" />
+                                            <label className="custom-file-label" for="letter">Select file</label>
+                                        </div>
 
-    handleCheckboxChange = () => {
-        this.setState((prevState) => ({ isChecked: !prevState.isChecked }));
-    };
-
-    render() {
-        const { isChecked } = this.state;
-
-        return (
-            <div>
-                <input type="checkbox" id="checkbox" checked={isChecked} onChange={this.handleCheckboxChange} />
-                <Header />
-                <div className="body">
-                    <Navbar />
-                    <section className="section-1">
-                        <h1 className="heading">Upload Offer Letter</h1>
-                        <section class="form-container">
-                            <form>
-                                <div className="box-container">
-                                    <p>Offer Letter:</p>
-                                    <input type="file" accept=".pdf" class="box" id="pdfInput" />
-                                    <input type="submit" value="Upload Offer Letter" name="submit" class="btn" />
+                                        <div className="text-left">
+                                            <button type="submit" className="btn btn-success">Upload</button>
+                                        </div>
+                                    </section>
                                 </div>
                             </form>
-                        </section>
-
-                    </section>
-
-                </div>
-                <div>
-                    <Footer />
-
+                        </div>
+                    </div>
                 </div>
             </div>
-        );
-    }
+        </>
+    )
 }
 
-export default Offerletter;
+export default Offerletter

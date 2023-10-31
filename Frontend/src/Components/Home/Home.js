@@ -127,7 +127,7 @@ function Home() {
                                 Institute is well established with nicely designed, spacious Class Rooms.
                                 Classrooms are available to facilitate the teaching-learning process.
                                 The college has a Cafeteria, common room for girls and boys, a Students Store, and a playground for some of the major games, viz. Football, Basketball, Volleyball, and Cricket.</p>
-                            <a href="about" className="read-more"><span>Read More</span><i className="bi bi-arrow-right"></i></a>
+                            {/* <a href="about" className="read-more"><span>Read More</span><i className="bi bi-arrow-right"></i></a> */}
                         </div>
 
                         <div className="col-xl-7">
@@ -245,18 +245,10 @@ function Home() {
                 </div>
                 {/* End Section Title */}
 
-                <div className="container" data-aos="fade-up" data-aos-delay="100">
+                <div className="m-5" data-aos="fade-up" data-aos-delay="100">
                     <div className="row gy-4">
                         <div className="col-lg-6">
                             <div className="row gy-4">
-                                <div className="col-md-6">
-                                    <div className="info-item" data-aos="fade" data-aos-delay="200">
-                                        <i className="bi bi-geo-alt"></i>
-                                        <h3>Address</h3>
-                                        <p>Government MCA College Maninagar</p>
-                                        <p>Padmashree K.K. Shastri Educational campus,Khokhra Road Ahmedabad (380008)</p>
-                                    </div>
-                                </div>
                                 <div className="col-md-6">
                                     <div className="info-item" data-aos="fade" data-aos-delay="300">
                                         <i className="bi bi-telephone"></i>
@@ -269,6 +261,14 @@ function Home() {
                                         <i className="bi bi-envelope"></i>
                                         <h3>Email Us</h3>
                                         <p>gmcacmnagar@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="info-item" data-aos="fade" data-aos-delay="200">
+                                        <i className="bi bi-geo-alt"></i>
+                                        <h3>Address</h3>
+                                        <p>Government MCA College Maninagar</p>
+                                        <p>Padmashree K.K. Shastri Educational campus,Khokhra Road Ahmedabad (380008)</p>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
@@ -309,9 +309,9 @@ function Home() {
                 </div>
             </section>
             <footer id="footer" className="footer">
-                <div className="container footer-top">
+                <div className="footer-top">
                     <div className="row gy-4">
-                        <div className="col-lg-7 col-md-12 footer-about">
+                        <div className="col-lg-6 col-md-12 footer-about">
                             <a href="index.html" className="d-flex align-items-center">
                                 <img src="images/GMCA.png" width={500} alt="Logo" />
                             </a>
@@ -320,7 +320,7 @@ function Home() {
                             </a>
                         </div>
 
-                        <div className="col-lg-2 col-6 footer-links">
+                        <div className="col-lg-3 col-md-6 footer-links">
                             <h4>Useful Links</h4>
                             <ul>
                                 <li><a target="_blank" rel="noreferrer" href="https://www.gmca.ac.in/">Government MCA College</a></li>
@@ -330,7 +330,7 @@ function Home() {
                                 {/* <li><a href="/">Admin</a></li> */}
                             </ul>
                         </div>
-                        <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                        <div className="col-lg-3 col-md-12 footer-contact text-md-start">
                             <h4>Contact Us</h4>
                             <p>Government MCA College Maninagar</p>
                             <p>Padmashree K.K. Shastri Educational campus,</p>
@@ -341,14 +341,14 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="container copyright text-center mt-4">
+                <div className="copyright text-center mt-4">
                     <p>&copy; <span>Copyright</span> <strong className="px-1">ACZ@Developers.com</strong> <span>All Rights Reserved</span></p>
                     <div className="credits">
                         {/* All the links in the footer should remain intact. */}
                         {/* You can delete the links only if you've purchased the pro version. */}
                         {/* Licensing information: https://bootstrapmade.com/license/ */}
                         {/* Purchase the pro version with working PHP/AJAX contact form: [buy-url] */}
-                        Designed by <a href="/">ACZ</a>
+                        Designed by ACZ
                     </div>
                 </div>
             </footer>

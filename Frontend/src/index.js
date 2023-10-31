@@ -24,15 +24,15 @@ import JobAdd from './Components/Admin/JobAdd';
 import JobEdit from './Components/Admin/JobEdit';
 
 //student
-import SDashboard from './Components/Student/SDashboard'
-import Offerletter from './Components/Student/Offerletter'
-import Placement from './Components/Student/Placement'
-import Profile from './Components/Student/Profile'
-import Resume from './Components/Student/Resume'
-import Header from './Components/Student/Header'
-import Footer from './Components/Student/Footer'
-import Navbar from './Components/Student/Navbar'
-
+import Hedaer from './Components/Student/Hedaer';
+import Sidebar from './Components/Student/Sidebar';
+import FooterS from './Components/Student/FooterS';
+import StudentLayout from './Components/Student/StudentLayout';
+import SDashboard from './Components/Student/SDashboard';
+import Offerletter from './Components/Student/Offerletter';
+import Placement from './Components/Student/Placement';
+import Resume from './Components/Student/Resume';
+import Profile from './Components/Student/Profile';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,16 +41,18 @@ const router = createBrowserRouter(
       <Route path='/signinas' element={<SignInAS />} ></Route>
       <Route path='/signin' element={<SignIn />} ></Route>
       <Route path='/asignin' element={<ASignIn />} ></Route>
-      <Route path='student/'>
-        <Route path='' element={<SDashboard />} ></Route>
-        <Route path='profile' element={<Profile />} ></Route>
-        <Route path='placement' element={<Placement />} ></Route>
-        <Route path='resume' element={<Resume />} ></Route>
-        <Route path='offerletter' element={<Offerletter />} ></Route>
-        <Route path='nav' element={<Navbar />} ></Route>
-        <Route path='header' element={<Header />} ></Route>
-        <Route path='footer' element={<Footer />} ></Route>
+
+      <Route path='student/' element={<StudentLayout/>}>
+        <Route path='' element={<SDashboard/> }></Route>
+        <Route path='profile' element={<Profile />}></Route>
+        <Route path='resume' element={<Resume />}></Route>
+        <Route path='letter' element={<Offerletter />}></Route>
+        <Route path='placement' element={<Placement/>}></Route>
+        <Route path='header' element={<Hedaer />}></Route>
+        <Route path='sidebar' element={<Sidebar />}></Route>
+        <Route path='footer' element={<FooterS />}></Route>
       </Route>
+
       <Route path='admin/' element={<AdminLayout />}>
         <Route path='' element={<Dashboard />} />
         <Route path='StuList' element={<StudentList />} />
