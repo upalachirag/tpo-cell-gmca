@@ -76,11 +76,11 @@ const StudentList = () => {
                                     <table className="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr style={{ background: "#4380b8a1" }}>
-                                                <th>Id</th>
-                                                <th>Enrollment No.</th>
-                                                <th>Full Name</th>
-                                                <th>Mobile No.</th>
-                                                <th>Email</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Id</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Enrollment No.</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Full Name</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Mobile No.</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Email</th>
                                             </tr>
                                         </thead>
                                         <tbody>

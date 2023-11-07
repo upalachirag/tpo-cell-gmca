@@ -38,14 +38,14 @@ const CompanyManage = () => {
                                     <table className="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr style={{ background: "#4380b8a1" }}>
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>Logo</th>
-                                                <th>Description</th>
-                                                <th>Technology</th>
-                                                <th>Location</th>
-                                                <th>Edit</th>
-                                                <th>Delete</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Id</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Name</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Logo</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Description</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Technology</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Location</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Edit</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Delete</th>
                                             </tr>
                                         </thead>                                 <tbody>
                                             {Company.map((d, i) => (

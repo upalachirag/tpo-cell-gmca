@@ -4,25 +4,25 @@ function Offerletter() {
     return (
         <>
             <div className="page-wrapper">
+                {/* Bread crumb and right sidebar toggle */}
+                <div className="page-breadcrumb">
+                    <div className="row">
+                        <div className="col-12 d-flex no-block align-items-center">
+                            <h3>Offer Letter</h3>
+                        </div>
+                    </div>
+                </div>
+                {/* End Bread crumb and right sidebar toggle */}
                 <div className="container-fluid">
                     <div className="card">
                         <div className="card-body wizard-content">
                             <h4 className="card-title">Upload Offer Letter</h4>
-                            <form id="example-form" action="#" className="m-t-40">
-                                <div>
-                                    <section>
-                                        <label htmlfor="letter" className="form-label">Choose your Offerletter file</label>
-                                        <div className="custom-file">
-                                            <input type="file" className="custom-file-input" id="letter" name="letter" />
-                                            <label className="custom-file-label" htmlfor="letter">Select file</label>
-                                        </div>
-
-                                        <div className="text-left">
-                                            <button type="submit" className="btn btn-success">Upload</button>
-                                        </div>
-                                    </section>
-                                </div>
-                            </form>
+                            <label htmlFor="letter" style={{ marginTop:"20px" }}>Select file</label>
+                            <input type="file" id="letter" name="letter" />
+                            <div className="text-left">
+                                <button type="submit" className="btn btn-success" style={{ marginTop:"20px" }}>Upload</button>
+                            </div>
+                            <label htmlFor="letter" style={{ marginTop:"20px" }}>Privew :</label>
                         </div>
                     </div>
                 </div>

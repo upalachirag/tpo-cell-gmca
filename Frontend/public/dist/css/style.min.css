@@ -12155,7 +12155,7 @@ ul.list-style-none li a:hover {
 
 .table th,
 .table thead th {
-    font-weight: 500
+    /* font-weight: 500 */
 }
 
 .nowrap {
@@ -12185,7 +12185,7 @@ ul.list-style-none li a:hover {
 }
 
 .page-breadcrumb {
-    padding: 20px 20px 0 20px
+    padding: 20px 20px 0 26px
 }
 
 .page-breadcrumb .page-title {

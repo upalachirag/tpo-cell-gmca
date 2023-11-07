@@ -11,40 +11,40 @@ class Sidebar extends React.Component {
                     <nav className="sidebar-nav">
                         <ul id="sidebarnav" className="p-t-30">
                             <li className="sidebar-item">
-                                <Link className="sidebar-link waves-effect waves-dark sidebar-link" to="/student" aria-expanded="false">
+                                <a className="sidebar-link waves-effect waves-dark sidebar-link" href="/student" aria-expanded="false">
                                     <i className="mdi mdi-view-dashboard"></i>
                                     <span className="hide-menu">Dashboard</span>
-                                </Link>
+                                </a>
                             </li>
                             <li className="sidebar-item">
-                                <Link className="sidebar-link waves-effect waves-dark sidebar-link" to="/student/profile" aria-expanded="false">
+                                <a className="sidebar-link waves-effect waves-dark sidebar-link" href="/student/profile" aria-expanded="false">
                                     <i className="mdi mdi-account"></i>
                                     <span className="hide-menu">Profile</span>
-                                </Link>
+                                </a>
                             </li>
                             <li className="sidebar-item">
-                                <Link className="sidebar-link waves-effect waves-dark sidebar-link" to="/student/placement" aria-expanded="false">
+                                <a className="sidebar-link waves-effect waves-dark sidebar-link" href="/student/placement" aria-expanded="false">
                                     <i className="mdi mdi-arrow-right"></i>
                                     <span className="hide-menu">Placement Drive</span>
-                                </Link>
+                                </a>
                             </li>
-                            <li className="sidebar-item">
-                                <Link className="sidebar-link waves-effect waves-dark sidebar-link" to="/student/resume" aria-expanded="false">
+                            {/* <li className="sidebar-item">
+                                <a className="sidebar-link waves-effect waves-dark sidebar-link" href="/student/resume" aria-expanded="false">
                                     <i className="mdi mdi-file-document"></i>
                                     <span className="hide-menu">Resume</span>
-                                </Link>
-                            </li>
+                                </a>
+                            </li> */}
                             <li className="sidebar-item">
-                                <Link className="sidebar-link waves-effect waves-dark sidebar-link" to="/student/letter" aria-expanded="false">
+                                <a className="sidebar-link waves-effect waves-dark sidebar-link" href="/student/letter" aria-expanded="false">
                                     <i className="mdi mdi-file-document"></i>
                                     <span className="hide-menu">Offer letter</span>
-                                </Link>
+                                </a>
                             </li>
                             <li className="sidebar-item">
-                                <Link className="sidebar-link waves-effect waves-dark sidebar-link" to="/" aria-expanded="false">
+                                <a className="sidebar-link waves-effect waves-dark sidebar-link" href="/" aria-expanded="false">
                                     <i className="mdi mdi-logout"></i>
                                     <span className="hide-menu">Logout</span>
-                                </Link>
+                                </a>
                             </li>
 
                             {/* Add other menu items similarly */}

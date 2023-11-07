@@ -31,8 +31,9 @@ import StudentLayout from './Components/Student/StudentLayout';
 import SDashboard from './Components/Student/SDashboard';
 import Offerletter from './Components/Student/Offerletter';
 import Placement from './Components/Student/Placement';
-import Resume from './Components/Student/Resume';
+// import Resume from './Components/Student/Resume';
 import Profile from './Components/Student/Profile';
+import ProfileView from './Components/Student/ProfileView';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,8 +45,9 @@ const router = createBrowserRouter(
 
       <Route path='student/' element={<StudentLayout/>}>
         <Route path='' element={<SDashboard/> }></Route>
-        <Route path='profile' element={<Profile />}></Route>
-        <Route path='resume' element={<Resume />}></Route>
+        <Route path='profile' element={<ProfileView />}></Route>
+        <Route path='updateprofile' element={<Profile />}></Route>
+        {/* <Route path='resume' element={<Resume />}></Route> */}
         <Route path='letter' element={<Offerletter />}></Route>
         <Route path='placement' element={<Placement/>}></Route>
         <Route path='header' element={<Hedaer />}></Route>

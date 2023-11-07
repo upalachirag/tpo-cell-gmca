@@ -37,15 +37,15 @@ const JobManage = () => {
                                     <table className="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr style={{ background: "#4380b8a1" }}>
-                                                <th>Company</th>
-                                                <th>Title</th>
-                                                <th>Description</th>
-                                                <th>Technology</th>
-                                                <th>Salary(LPA)</th>
-                                                <th>Offer</th>
-                                                <th>Last Date</th>
-                                                <th>Edit</th>
-                                                <th>Delete</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Company</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Title</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Description</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Technology</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Salary(LPA)</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Offer</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Last Date</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Edit</th>
+                                                <th style={{ backgroundColor : "#4380b8a1"}} >Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>

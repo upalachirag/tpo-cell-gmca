@@ -57,9 +57,9 @@ const GalleryManage = () => {
 
                                     <thead>
                                         <tr style={{ background: "#4380b8a1" }}>
-                                            <th>Company Id</th>
-                                            <th>Name</th>
-                                            <th>Image</th>
+                                            <th style={{ backgroundColor : "#4380b8a1"}} >Company Id</th>
+                                            <th style={{ backgroundColor : "#4380b8a1"}} >Name</th>
+                                            <th style={{ backgroundColor : "#4380b8a1"}} >Image</th>
                                             {/* <th>Edit</th>
                                                 <th>Delete</th> */}
                                         </tr>

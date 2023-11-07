@@ -30,11 +30,19 @@ function Placement() {
   return (
     <>
       <div className="page-wrapper">
-        <div className="container-fluid">
-          <div className="card">
+        {/* Bread crumb and right sidebar toggle */}
+        <div className="page-breadcrumb">
+          <div className="row">
+            <div className="col-12 d-flex no-block align-items-center">
+              <h3>Placement Drive</h3>
+            </div>
+          </div>
+        </div>
+        {/* End Bread crumb and right sidebar toggle */}
+        <div className="container-fluid row">
+          <div className="card col-6">
             <div className="card-body wizard-content">
               <h4 className="card-title">Placement Drive Form</h4>
-              <h6 className="card-subtitle"></h6>
               <form id="placement-drive-form" action="#" className="m-t-40">
                 <div>
                   <section>
@@ -100,6 +108,7 @@ function Placement() {
                     </div>
                   </section>
                 </div>
+              </form>
                 <div className="text-left">
                   <button
                     type="button"
@@ -109,7 +118,6 @@ function Placement() {
                     Apply
                   </button>
                 </div>
-              </form>
             </div>
           </div>
         </div>
