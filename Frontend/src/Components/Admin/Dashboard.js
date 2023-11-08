@@ -21,7 +21,7 @@ const Dashboard = () => {
                                             <h5>Total Students</h5>
                                         </div>
                                         <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
-                                            20
+                                            60
                                         </div>
                                     </div>
                                 </div>
@@ -34,7 +34,7 @@ const Dashboard = () => {
                                             <h5>Placement Drive </h5>
                                         </div>
                                         <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
-                                            20
+                                            2
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@ const Dashboard = () => {
                                             <h5> Selected Students </h5>
                                         </div>
                                         <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
-                                            20
+                                            3
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@ const Dashboard = () => {
                                             <h5> Total Companies </h5>
                                         </div>
                                         <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
-                                            20
+                                            2
                                         </div>
                                     </div>
                                 </div>

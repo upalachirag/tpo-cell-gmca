@@ -5,9 +5,18 @@ const multer = require("multer");
 const path = require("path");
 const nodemailer = require('nodemailer');
 const readXlsxFile = require('read-excel-file/node');
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin:["http://localhost:3000"],
+        methods:["POST, GET"],
+        credentials: true
+    }
+));
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -50,11 +59,36 @@ app.post("/signup", (req, res) => {
     // })
 })
 
+const verifyStudent = (req, res, next) => {
+    const stoken = req.cookies.stoken;
+    console.log(req.cookies.stoken);
+    if(!stoken){
+        return res.json({Message: "Please Login"});
+    } else {
+        jwt.verify(stoken,"gmca-tpo-cell-jsonwebtoken-secret-key", (err, decoded) => {
+            if(err){
+                return res.json({Message: "Authentication Error."});
+            }else{
+                req.enroll = decoded.enroll;
+                next();
+            }
+        })
+    }
+}
+
+app.get('/', verifyStudent, (req, res) => {
+    console.log(req.enroll);
+    return res.json({ Status: "Success", enroll: req.enroll })
+})
+
 app.post("/signin", (req, res) => {
     const sql = "SELECT * FROM sregistration WHERE email = ? AND password = ?";
     db.query(sql, [req.body.email, req.body.password], (err, data) => {
         if (err) return console.log(err);
         if (data.length > 0) {
+            const enroll = data[0].enroll;
+            const token = jwt.sign({enroll},"gmca-tpo-cell-jsonwebtoken-secret-key",{expiresIn:'1d'});
+            res.cookie('stoken',token);
             return res.json({ signin: true });
         } else {
             return res.json({ signin: false });
@@ -68,6 +102,9 @@ app.post("/asignin", (req, res) => {
     db.query(sql, [req.body.email, req.body.password], (err, data) => {
         if (err) return console.log(err);
         if (data.length > 0) {
+            const name = data[0].name;
+            const token = jwt.sign({name},"gmca-tpo-cell-jsonwebtoken-secret-key",{expiresIn:'1d'});
+            res.cookie('admintoken',token);
             return res.json({ signin: true });
         } else {
             return res.json({ signin: false });

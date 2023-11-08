@@ -198,7 +198,7 @@ function Home() {
                             <div className="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
                                 <article>
                                     <div className="post-img">
-                                        <img src="" alt="Jaimin sir pic" className="img-fluid" />
+                                        <img src="assets2/img/Jaimin Sir.jpg" alt="Jaimin sir pic" className="img-fluid" />
                                     </div>
                                     <p className="post-category">Jaimin B. Dave</p>
                                     <h2 className="title">

@@ -43,6 +43,7 @@ const SignIn = () => {
             .catch(err => console.log(err));
     }
 
+    axios.defaults.withCredentials = true;
     const handleSubmit2 = async (e) => {
         e.preventDefault();
         axios.post('http://localhost:8081/signin', values2)
@@ -70,7 +71,7 @@ const SignIn = () => {
                     </form>
                     <div className="signup">
                         <span className="signup">Not Registered?
-                            <label for="check">Signup</label>
+                            <label htmlFor="check">Signup</label>
                         </span>
                     </div>
                 </div>
@@ -89,7 +90,7 @@ const SignIn = () => {
                     )} */}
                     <div className="signup">
                         <span className="signup">Already Registered?
-                            <label for="check">Login</label>
+                            <label htmlFor="check">Login</label>
                         </span>
                     </div>
                 </div>

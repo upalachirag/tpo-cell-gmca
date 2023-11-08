@@ -27,12 +27,12 @@ const JobAdd = () => {
                 <div id="page-inner">
                     <div className="row">
                         <div className="col-md-12">
-                            <h1 className="page-head-line">Add Company</h1>
+                            <h1 className="page-head-line">Add Job/Internship</h1>
                             {/* <h1 className="page-subhead-line">This is dummy text , you can replace it with your original text. </h1> */}
                             <div className="col-md-6 col-sm-6 col-xs-12">
                                 <div className="panel panel-primary">
                                     <div className="panel-heading">
-                                        Add Company Form
+                                        Add Job/Internship Form
                                     </div>
                                     <div className="panel-body">
                                         <form onSubmit={handleSubmit}>
