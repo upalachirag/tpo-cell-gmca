@@ -3,6 +3,7 @@ const mysql = require('mysql');
 const cors = require('cors');
 const multer = require("multer");
 const path = require("path");
+const nodemailer = require('nodemailer');
 const readXlsxFile = require('read-excel-file/node');
 
 const app = express();
@@ -36,7 +37,7 @@ app.post("/signup", (req, res) => {
         return res.json("User Added Succesfully");
     })
     // const sql2 = "SELECT * FROM student WHERE enroll = ?"
-    
+
     // db.query(sql2,[enroll],(err,data)=>
     // {
     //     if(err) return res.json(err);
@@ -51,28 +52,28 @@ app.post("/signup", (req, res) => {
 
 app.post("/signin", (req, res) => {
     const sql = "SELECT * FROM sregistration WHERE email = ? AND password = ?";
-    db.query(sql, [req.body.email,req.body.password], (err, data) => {
+    db.query(sql, [req.body.email, req.body.password], (err, data) => {
         if (err) return console.log(err);
-        if(data.length > 0){
-            return res.json({signin: true});
+        if (data.length > 0) {
+            return res.json({ signin: true });
         } else {
-            return res.json({signin: false});
+            return res.json({ signin: false });
         }
     })
-    
+
 })
 
 app.post("/asignin", (req, res) => {
     const sql = "SELECT * FROM admin WHERE email = ? AND password = ?";
-    db.query(sql, [req.body.email,req.body.password], (err, data) => {
+    db.query(sql, [req.body.email, req.body.password], (err, data) => {
         if (err) return console.log(err);
-        if(data.length > 0){
-            return res.json({signin: true});
+        if (data.length > 0) {
+            return res.json({ signin: true });
         } else {
-            return res.json({signin: false});
+            return res.json({ signin: false });
         }
     })
-    
+
 })
 
 app.get("/checkenroll", (req, res) => {
@@ -256,6 +257,65 @@ app.delete("/CompanyDelete/:id", (req, res) => {
         return res.json("Company Deleted Succesfully");
     })
 })
+
+//Notification
+app.post("/admin/notification", (req, res) => {
+    const sql = "INSERT INTO notification (`msg`) VALUES (?)";
+    const msg = req.body.message
+    db.query(sql, [msg], (err, data) => {
+        if (err) return console.log(err);
+        return res.json("Message Added Succesfully");
+    })
+})
+
+app.delete("/admin/Dnotification/:id", (req, res) => {
+    const sql = "DELETE FROM notification WHERE id = ?";
+    const id = req.params.id;
+    db.query(sql, [id], (err, data) => {
+        if (err) return console.log(err);
+        return res.json("Message Deleted Succesfully");
+    })
+})
+
+app.get("/admin/Rnotification", (req, res) => {
+    const sql = "SELECT * FROM notification";
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data);
+    })
+})
+
+//email
+app.post("/admin/email", (req, res) => {
+    const email = req.body.email;
+    const subject = req.body.subject;
+    const message = req.body.message;
+
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'cjupala0406@gmail.com',
+            pass: 'hrkt udfv glhp ykoh'
+        }
+    });
+
+    var mailOptions = {
+        from: 'cjupala0406@gmail.com',
+        to: `${email}`,
+        subject: `${subject}`,
+        text: `${message}`
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+            return res.json(info);
+        }
+    });
+})
+
 
 app.listen(8081, () => {
     console.log("listening");

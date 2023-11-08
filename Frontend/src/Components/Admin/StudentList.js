@@ -9,10 +9,10 @@ const StudentList = () => {
     const [typeError, setTypeError] = useState(null);
     const [StudentList, setStudentList] = useState([])
 
-    useEffect( () => {
+    useEffect(() => {
         axios.get('http://localhost:8081/admin/StudentList')
-        .then(res => setStudentList(res.data))
-        .catch(err => console.log(err));
+            .then(res => setStudentList(res.data))
+            .catch(err => console.log(err));
     })
 
     // onchange event
@@ -48,7 +48,7 @@ const StudentList = () => {
                 }
             })
             .catch(err => console.log(err));
-        document.getElementById('excel').value= null;
+        document.getElementById('excel').value = null;
     }
 
 
@@ -63,35 +63,35 @@ const StudentList = () => {
                                 <form >
                                     <h1 className='page-head-line'>Student List</h1>
                                     <form className="form-inline" style={{ marginBottom: "15px" }} >
-                                    <label htmlFor="company_logo">Excel File:</label>
+                                        <label htmlFor="company_logo">Excel File:</label>
                                         <input type="file" id='excel' className="form-control-file" required onChange={handleFile} />
                                         <button type="submit" className="btn btn-success btn-md" onClick={handleFileSubmit}>UPLOAD</button>
                                     </form>
-                                        {typeError && (
-                                            <div className="alert alert-danger" role="alert">{typeError}</div>
-                                        )}
+                                    {typeError && (
+                                        <div className="alert alert-danger" role="alert">{typeError}</div>
+                                    )}
 
                                     {/* <button type="submit" className="btn btn-info" style={{ marginBottom: "15px" }}> Upload Excel file </button> */}
 
                                     <table className="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr style={{ background: "#4380b8a1" }}>
-                                                <th style={{ backgroundColor : "#4380b8a1"}} >Id</th>
-                                                <th style={{ backgroundColor : "#4380b8a1"}} >Enrollment No.</th>
-                                                <th style={{ backgroundColor : "#4380b8a1"}} >Full Name</th>
-                                                <th style={{ backgroundColor : "#4380b8a1"}} >Mobile No.</th>
-                                                <th style={{ backgroundColor : "#4380b8a1"}} >Email</th>
+                                                <th style={{ backgroundColor: "#4380b8a1" }} >Id</th>
+                                                <th style={{ backgroundColor: "#4380b8a1" }} >Enrollment No.</th>
+                                                <th style={{ backgroundColor: "#4380b8a1" }} >Full Name</th>
+                                                <th style={{ backgroundColor: "#4380b8a1" }} >Mobile No.</th>
+                                                <th style={{ backgroundColor: "#4380b8a1" }} >Email</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {StudentList.map((d,i)=>(
-                                            <tr>
-                                                <td>{d.id}</td>
-                                                <td>{d.enroll}</td>
-                                                <td>{d.name}</td>
-                                                <td>{d.mobile}</td>
-                                                <td>{d.email}</td>
-                                            </tr>
+                                            {StudentList.map((d, i) => (
+                                                <tr>
+                                                    <td>{d.id}</td>
+                                                    <td>{d.enroll}</td>
+                                                    <td>{d.name}</td>
+                                                    <td>{d.mobile}</td>
+                                                    <td>{d.email}</td>
+                                                </tr>
                                             ))}
                                         </tbody>
                                     </table>

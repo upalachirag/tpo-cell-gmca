@@ -26,8 +26,8 @@ const ProfileView = () => {
                                     <label htmlFor="name">Full Name : </label>
                                     &nbsp;&nbsp;<i id="name" name="name">Chirag</i><br />
 
-                                    <label htmlFor="userName">Enrollment No :</label>&nbsp;&nbsp;
-                                    <i id="userName" name="userName" >225690694066</i><br />
+                                    <label htmlFor="enroll">Enrollment No :</label>&nbsp;&nbsp;
+                                    <i id="enroll" name="enroll" >225690694066</i><br />
 
                                     <label htmlFor="phone">Mobile No. :</label>&nbsp;&nbsp;
                                     <i id="phone" name="phone" >9328043842</i><br />
@@ -40,9 +40,9 @@ const ProfileView = () => {
                                     <table className="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr>
-                                                <th style={{ backgroundColor : "#4380b8a1"}}>Course</th>
-                                                <th style={{ backgroundColor : "#4380b8a1"}}>Passing Year</th>
-                                                <th style={{ backgroundColor : "#4380b8a1"}}>Percentage/CGPA/CPI</th>
+                                                <th style={{ backgroundColor: "#4380b8a1" }}>Course</th>
+                                                <th style={{ backgroundColor: "#4380b8a1" }}>Passing Year</th>
+                                                <th style={{ backgroundColor: "#4380b8a1" }}>Percentage/CGPA/CPI</th>
                                                 {/* <th>Full Name</th>
                                                 <th>Mobile No.</th>
                                                 <th>Email</th> */}
@@ -50,16 +50,21 @@ const ProfileView = () => {
                                         </thead>
                                         <tbody>
                                             {/* {StudentList.map((d, i) => ( */}
-                                                <tr>
-                                                    {/* <td>{d.course}</td>
+                                            <tr>
+                                                {/* <td>{d.course}</td>
                                                     <td>{d.result}</td> */}
-                                                    <td>10th</td>
-                                                    <td>2017</td>
-                                                    <td>78</td>
-                                                </tr>
+                                                <td>10th</td>
+                                                <td>2017</td>
+                                                <td>78</td>
+                                            </tr>
                                             {/* ))} */}
                                         </tbody>
                                     </table>
+
+                                    <h4 className="card-title" style={{ marginTop: "40px" }}><b>Technical Detail</b></h4>
+
+                                    <label htmlFor="skill">Email :</label>&nbsp;&nbsp;
+                                    <i id="skill" name="skill" >react-js,node-js,html</i><br />
 
                                     <h4 className="card-title" style={{ paddingTop: "15px" }}><b>Resume</b></h4>
                                 </div>

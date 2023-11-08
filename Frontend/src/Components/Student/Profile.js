@@ -73,7 +73,7 @@ function Profile() {
                                     <input id="email" name="email" type="text" className="required email form-control" />
 
                                     <label htmlFor="phone">Mobile No. : </label>
-                                    <input id="phone" name="phone" type="text" className="required email form-control" />
+                                    <input id="phone" name="phone" type="text" className="required form-control" />
 
                                     <h4 className="card-title" style={{ marginTop: "40px" }}><b>Educational Detail</b></h4>
 
@@ -121,6 +121,11 @@ function Profile() {
                                             {/* ))} */}
                                         </tbody>
                                     </table>
+
+                                    <h4 className="card-title" style={{ marginTop: "40px" }}><b>Technical Detail</b></h4>
+
+                                    <label htmlFor="skill">Technical Skills : </label>
+                                    <input id="skill" name="skill" type="text" className="form-control" />
 
                                     <h4 className="card-title" style={{ marginTop: "40px" }}><b>Resume</b></h4>
 

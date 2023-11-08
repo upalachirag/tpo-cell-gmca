@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function SDashboard() {
+
+    const [notify, setNotify] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8081/admin/Rnotification')
+            .then(res => setNotify(res.data))
+            .catch(err => console.log(err));
+    }, [])
+
     return (
         <>
             <div className="page-wrapper">
@@ -43,14 +53,14 @@ function SDashboard() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6 col-lg-2 col-xlg-3">
+                        {/* <div className="col-md-6 col-lg-2 col-xlg-3">
                             <div className="card card-hover">
                                 <div className="box bg-warning text-center">
                                     <h1 className="font-light text-white"><i className="mdi mdi-file-document"></i></h1>
                                     <h6 className="text-white">Resume</h6>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="col-md-6 col-lg-2 col-xlg-3">
                             <div className="card card-hover">
                                 <div className="box bg-success text-center">
@@ -61,6 +71,18 @@ function SDashboard() {
                         </div>
 
                         {/* Add other columns similarly */}
+                    </div>
+                    <div className="card">
+                        <div className="card-body wizard-content">
+                            <h4 className="card-title" style={{ color: "#1f262d" }}><b>Latest Updates</b></h4>
+
+                            {notify.map((d, i) => (
+                                <>
+                                    <i className="mdi mdi-arrow-right"></i>&nbsp;
+                                    <span>{d.msg}</span><br/>
+                                </>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -42,82 +42,50 @@ function Placement() {
         <div className="container-fluid row">
           <div className="card col-6">
             <div className="card-body wizard-content">
-              <h4 className="card-title">Placement Drive Form</h4>
+              {/* <h4 className="card-title">Placement Drive Form</h4> */}
               <form id="placement-drive-form" action="#" className="m-t-40">
-                <div>
-                  <section>
-                    <div className="form-group">
-                      <label htmlFor="companyLogo">Company Logo (Image URL)</label>
-                      <input
-                        type="text"
-                        name="companyLogo"
-                        className="form-control"
-                        onChange={handleInputChange}
-                        value={driveDetails.companyLogo}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="companyName">Company Name</label>
-                      <input
-                        type="text"
-                        name="companyName"
-                        className="form-control"
-                        onChange={handleInputChange}
-                        value={driveDetails.companyName}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="location">Location</label>
-                      <input
-                        type="text"
-                        name="location"
-                        className="form-control"
-                        onChange={handleInputChange}
-                        value={driveDetails.location}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="website">Website</label>
-                      <input
-                        type="text"
-                        name="website"
-                        className="form-control"
-                        onChange={handleInputChange}
-                        value={driveDetails.website}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="internshipPositions">Number of Internship Positions</label>
-                      <input
-                        type="number"
-                        name="internshipPositions"
-                        className="form-control"
-                        onChange={handleInputChange}
-                        value={driveDetails.internshipPositions}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="requiredSkills">Required Skills</label>
-                      <textarea
-                        name="requiredSkills"
-                        className="form-control"
-                        rows="4"
-                        onChange={handleInputChange}
-                        value={driveDetails.requiredSkills}
-                      ></textarea>
-                    </div>
-                  </section>
-                </div>
+                  <div className="form-group">
+                    <img src='' alt='Company Logo' height={100} />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="companyName">Company Name :</label>&nbsp;&nbsp;
+                    <i id="companyName" name="companyName" >CODEVISION</i><br />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="description">Description :</label>&nbsp;&nbsp;
+                    <i id="description" name="description" >very good company</i><br />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="offer">Offer :</label>&nbsp;&nbsp;
+                    <i id="offer" name="offer" >job/internship</i><br />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="jobtitle">Job/Internship Title :</label>&nbsp;&nbsp;
+                    <i id="jobtitle" name="jobtitle" >job</i><br />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="skill">Required Skill :</label>&nbsp;&nbsp;
+                    <i id="skill" name="skill" >html,java</i><br />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="salary">Salary :</label>&nbsp;&nbsp;
+                    <i id="salary" name="salary" >2.4 LPA</i><br />
+                  </div>
               </form>
-                <div className="text-left">
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    onClick={handleApply}
-                  >
-                    Apply
-                  </button>
-                </div>
+              <div className="text-left">
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  onClick={handleApply}
+                >
+                  Apply
+                </button>
+              </div>
             </div>
           </div>
         </div>
