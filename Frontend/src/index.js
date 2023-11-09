@@ -34,6 +34,7 @@ import Placement from './Components/Student/Placement';
 // import Resume from './Components/Student/Resume';
 import Profile from './Components/Student/Profile';
 import ProfileView from './Components/Student/ProfileView';
+import JobApplication from './Components/Admin/JobApplication';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -60,6 +61,7 @@ const router = createBrowserRouter(
         <Route path='StuList' element={<StudentList />} />
         <Route path='SelectStu' element={<SelectedStu />} />
         <Route path='Notification' element={<Notification />} />
+        <Route path='jobApplication' element={<JobApplication/>} />
         <Route path='CompanyManage' element={<CompanyManage />} />
         <Route path='EditCompany/:id' element={<EditCompany />} />
         <Route path='AddCompany' element={<AddCompany />} />

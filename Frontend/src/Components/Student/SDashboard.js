@@ -1,24 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function SDashboard() {
-
-    // const [auth, setAuth] = useState(false);
-    // const [enroll, setEnroll] = useState('');
-    // const [message, setMessage] = useState('');
-
-    // useEffect(() => {
-    //     axios.get("http://localhost:8081/verifySudents")
-    //         .then(res => {
-    //             if (res.data.Status === 'Success') {
-    //                 setAuth(true);
-    //                 setEnroll(res.data.enroll);
-    //             } else {
-    //                 setMessage(res.data.Message);
-    //             }
-    //         })
-    // }, [])
 
     const [notify, setNotify] = useState([]);
 

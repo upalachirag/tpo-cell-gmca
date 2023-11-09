@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 // Import CSS File
 import './assets/css/bootstrap.css'
 import './assets/css/font-awesome.css'
@@ -7,6 +8,34 @@ import './assets/css/basic.css'
 import './assets/css/custom.css'
 
 const Head = () => {
+
+    const navigate = useNavigate();
+    const [name, setName] = useState('');
+    const [dataLoaded, setDataLoaded] = useState(false);
+
+    useEffect(() => {
+        axios.get("http://localhost:8081/")
+            .then(res => {
+                if (res.data.valid) {
+                    setName(res.data.username);
+                    setDataLoaded(true);
+                } else {
+                    // navigate('/asignin');
+                }
+            })
+    }, [])
+
+    const [adminData, setAdminData] = useState('');
+    useEffect(() => {
+        if(dataLoaded){
+            axios.post('http://localhost:8081/admindata', { name })
+            .then(res => {
+                setAdminData(res.data);
+            })
+            .catch(err => console.log(err));
+        }
+    })
+
     return (
         <>
             {/* <!-- BOOTSTRAP STYLES--> */}
@@ -46,12 +75,12 @@ const Head = () => {
                     <ul className="anav" id="main-menu">
                         <li>
                             <div className="user-img-div">
-                                <img src="assets/img/user.png" className="img-thumbnail" alt='Admin pic' />
+                                <img src="assets2/img/user.jpg" className="img-thumbnail" alt='Admin pic' />
 
                                 <div className="inner-text">
-                                    TPO GMCA
+                                    Chirag Upala
                                     <br />
-                                    <small>Last Login:2 Weeks Ago </small>
+                                    {/* <small>Last Login:2 Weeks Ago </small> */}
                                 </div>
                             </div>
 
@@ -72,9 +101,9 @@ const Head = () => {
                         <li>
                             <Link to="/admin/SelectStu"><i className="fa fa-list-ul "></i>Selected Students List</Link>
                         </li>
-                        {/* <li>
-                            <Link to="/admin/Notification"><i className="fa fa-bell "></i>Notifications</Link>
-                        </li> */}
+                        <li>
+                            <Link to="/admin/jobApplication"><i className="fa fa-bell "></i>Job Application</Link>
+                        </li>
                         <li>
                             <Link to="/admin/Notification"><i className="fa fa-bell "></i>Notifications / Communication </Link>
                         </li>

@@ -1,6 +1,36 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Hedaer() {
+
+    const navigate = useNavigate();
+    const [enroll, setEnroll] = useState('');
+    const [dataLoaded, setDataLoaded] = useState(false);
+
+    useEffect(() => {
+        axios.get("http://localhost:8081/")
+            .then(res => {
+                if (res.data.valid) {
+                    setEnroll(res.data.username);
+                    setDataLoaded(true);
+                } else {
+                    // navigate('/signin');
+                }
+            })
+    }, [])
+
+    const [enrollData, setEnrollData] = useState('');
+    useEffect(() => {
+        if(dataLoaded){
+            axios.post('http://localhost:8081/enrolldata', { enroll })
+            .then(res => {
+                setEnrollData(res.data);
+            })
+            .catch(err => console.log(err));
+        }
+    })
+
     return (
         <div>
             <div id="main-wrapper">
@@ -14,7 +44,7 @@ function Hedaer() {
                         {/* <li className="nav-item dropdown"> */}
                         <a className="pro-pic ml-auto mr-4 d-flex">
                             <span className="mr-3">
-                                <h5 style={{color:"darkgray"}}>Welcome,username</h5>
+                                <h5 style={{color:"darkgray"}}>Welcome,{enrollData.name}</h5>
                             </span>
                             <img src="assets/images/users/1.jpg" alt="user" className="rounded-circle" width="31" />
                         </a>

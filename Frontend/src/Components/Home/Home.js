@@ -76,20 +76,22 @@ function Home() {
                     {/* Nav Menu */}
                     <nav id="navmenu" className="navmenu">
                         <ul>
-                            <li><a href="#hero" className="active">Home</a></li>
+                        {/* className="active" */}
+                            <li><a href="#hero">Home</a></li>
                             <li><a href="#about">About</a></li>
+                            <li><a href="#tpo">TPO</a></li>
                             <li><a href="#recruiter">Recruiter</a></li>
                             <li><a href="#contact">Contact</a></li>
                             {/* <li><a href="/">Admin</a></li>
               <li><a href="/">Student</a></li> */}
-                            <li className="dropdown has-dropdown"><a href="/"><span>Placement statistics</span> <i className="bi bi-chevron-down"></i></a>
+                            {/* <li className="dropdown has-dropdown"><a href="/"><span>Placement statistics</span> <i className="bi bi-chevron-down"></i></a>
                                 <ul className="dd-box-shadow">
                                     <li><a href="/">2022</a></li>
                                     <li><a href="/">2021</a></li>
                                     <li><a href="/">2020</a></li>
                                     <li><a href="/">2019</a></li>
                                 </ul>
-                            </li>
+                            </li> */}
                         </ul>
 
                         <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -162,7 +164,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section id="recent-posts" className="recent-posts">
+            <section id="tpo" className="recent-posts">
                 <div className="container section-title" data-aos="fade-up">
                     <h2>Training & Placement Officer</h2>
                 </div>

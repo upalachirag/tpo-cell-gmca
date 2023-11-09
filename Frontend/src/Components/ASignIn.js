@@ -16,7 +16,8 @@ const ASignIn = () => {
     }
 
     const navigate = useNavigate();
-
+    
+    axios.defaults.withCredentials = true;
     const handleSubmit2 = async (e) => {
         e.preventDefault();
         axios.post('http://localhost:8081/asignin', values2)

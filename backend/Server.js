@@ -7,18 +7,30 @@ const nodemailer = require('nodemailer');
 const readXlsxFile = require('read-excel-file/node');
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const bodyParser = require("body-parser");
 
 const app = express();
 app.use(cors(
     {
         origin:["http://localhost:3000"],
-        methods:["POST, GET"],
+        methods:["POST", "GET"],
         credentials: true
     }
 ));
-app.use(cookieParser());
 app.use(express.json());
 app.use(express.static('public'));
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(session({
+    secret: 'gmca-tpo-cell',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: false,
+        maxAge: 1000 * 60 * 60 * 24
+    }
+}))
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -26,6 +38,109 @@ const db = mysql.createConnection({
     password: "",
     database: "tpocell"
 });
+
+app.post("/student/apply", (req, res) => {
+    const sql = "INSERT INTO application (`company`,`job`,`name`,`enroll`) VALUES (?)";
+    const values = [
+        req.body.name,
+        req.body.title,
+        req.body.sname,
+        req.body.enroll
+    ]
+    db.query(sql, [values], (err, data) => {
+        if (err) return console.log(err);
+        return res.json("Application Added Succesfully");
+    })
+})
+
+app.get("/application",(req, res) => {
+    const sql = "SELECT * FROM application";
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data);
+    })
+})
+
+app.post("/student/select", (req, res) => {
+    const sql = "INSERT INTO selected (`company`,`job`,`name`,`enroll`) VALUES (?)";
+    const values = [
+        req.body.company,
+        req.body.job,
+        req.body.name,
+        req.body.enroll
+    ]
+    db.query(sql, [values], (err, data) => {
+        if (err) return console.log(err);
+        return res.json("Application Added Succesfully");
+    })
+})
+
+app.get("/selected",(req, res) => {
+    const sql = "SELECT * FROM application";
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data);
+    })
+})
+
+//profile
+app.post("/student/updateprofile", (req, res) => {
+    
+    const name = req.body.name;
+    const email = req.body.email;
+    const mobile = req.body.mobile;
+    const skill = req.body.skill;
+    const enroll = req.body.enroll;
+    
+    const sql = "UPDATE student SET name=?, email=?, mobile=?, skill=? WHERE enroll = ?";
+    db.query(sql, [name,email,mobile,skill,enroll], (err, data) => {
+        if (err) return console.log(err);
+        return res.json(data);
+    })
+})
+
+
+//placement
+app.get("/student/placement",(req, res) => {
+    const sql = "SELECT job.title,job.technology,job.salary,job.deadline,job.internship,company.name,company.image FROM job LEFT JOIN company ON company.id = job.company_id";
+
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        // console.log(data);
+        return res.json(data);
+    })
+})
+
+//count
+app.get("/job",(req, res) => {
+    const sql = "SELECT COUNT(id) as count FROM job";
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data[0].count);
+    })
+})
+
+app.get("/stu",(req, res) => {
+    const sql = "SELECT COUNT(id) as count FROM student";
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data[0].count);
+    })
+})
+app.get("/company",(req, res) => {
+    const sql = "SELECT COUNT(id) as count FROM company";
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data[0].count);
+    })
+})
+app.get("/Sstu",(req, res) => {
+    const sql = "SELECT COUNT(id) as count FROM job";
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data[0].count);
+    })
+})
 
 //signup & signin
 app.post("/signup", (req, res) => {
@@ -59,26 +174,32 @@ app.post("/signup", (req, res) => {
     // })
 })
 
-const verifyStudent = (req, res, next) => {
-    const stoken = req.cookies.stoken;
-    console.log(req.cookies.stoken);
-    if(!stoken){
-        return res.json({Message: "Please Login"});
-    } else {
-        jwt.verify(stoken,"gmca-tpo-cell-jsonwebtoken-secret-key", (err, decoded) => {
-            if(err){
-                return res.json({Message: "Authentication Error."});
-            }else{
-                req.enroll = decoded.enroll;
-                next();
-            }
-        })
-    }
-}
 
-app.get('/', verifyStudent, (req, res) => {
-    console.log(req.enroll);
-    return res.json({ Status: "Success", enroll: req.enroll })
+app.get('/', (req, res) => {
+    // console.log(req.session.username + " hello");
+    if(req.session.username){
+        return res.json({valid: true, username: req.session.username})
+    } else {
+        return res.json({valid: false})
+    }
+})
+
+app.post("/enrolldata", (req, res) => {
+    // console.log(req.body.enroll);
+    const sql = "SELECT * FROM student WHERE enroll = ?";
+    db.query(sql, [req.body.enroll], (err, data) => {
+        if (err) return console.log(err);
+        return res.json(data[0]);
+    })
+})
+
+app.post("/admindata", (req, res) => {
+    // console.log(req.body.enroll);
+    const sql = "SELECT * FROM admin WHERE name = ?";
+    db.query(sql, [req.body.name], (err, data) => {
+        if (err) return console.log(err);
+        return res.json(data[0]);
+    })
 })
 
 app.post("/signin", (req, res) => {
@@ -86,9 +207,10 @@ app.post("/signin", (req, res) => {
     db.query(sql, [req.body.email, req.body.password], (err, data) => {
         if (err) return console.log(err);
         if (data.length > 0) {
-            const enroll = data[0].enroll;
-            const token = jwt.sign({enroll},"gmca-tpo-cell-jsonwebtoken-secret-key",{expiresIn:'1d'});
-            res.cookie('stoken',token);
+            // const enroll = data[0].enroll;
+            // const token = jwt.sign({enroll},"gmca-tpo-cell-jsonwebtoken-secret-key",{expiresIn:'1d'});
+            // res.cookie('stoken',token);
+            req.session.username = data[0].enroll;
             return res.json({ signin: true });
         } else {
             return res.json({ signin: false });
@@ -102,9 +224,10 @@ app.post("/asignin", (req, res) => {
     db.query(sql, [req.body.email, req.body.password], (err, data) => {
         if (err) return console.log(err);
         if (data.length > 0) {
-            const name = data[0].name;
-            const token = jwt.sign({name},"gmca-tpo-cell-jsonwebtoken-secret-key",{expiresIn:'1d'});
-            res.cookie('admintoken',token);
+            // const name = data[0].name;
+            // const token = jwt.sign({name},"gmca-tpo-cell-jsonwebtoken-secret-key",{expiresIn:'1d'});
+            // res.cookie('admintoken',token);
+            req.session.username = data[0].name;
             return res.json({ signin: true });
         } else {
             return res.json({ signin: false });
@@ -141,6 +264,16 @@ app.post("/uploadCompanyImage/:id", upload.single('image'), (req, res) => {
     const id = req.params.id;
     const sql = "UPDATE company SET `image`=? WHERE `id`=?";
     db.query(sql, [image, id], (err, data) => {
+        if (err) return res.json(err);
+        return res.json({ Status: "Success" });
+    })
+})
+
+app.post("/StudentImage/:enroll", upload.single('image'), (req, res) => {
+    const image = req.file.filename;
+    const enroll = req.params.enroll;
+    const sql = "UPDATE student SET `image`=? WHERE `enroll`=?";
+    db.query(sql, [image, enroll], (err, data) => {
         if (err) return res.json(err);
         return res.json({ Status: "Success" });
     })

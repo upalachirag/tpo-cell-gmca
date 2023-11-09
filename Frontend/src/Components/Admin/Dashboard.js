@@ -1,6 +1,30 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 const Dashboard = () => {
+
+    const [student, setstudent] = useState('')
+    const [company, setcompany] = useState('')
+    const [job, setjob] = useState('')
+    const [Sstu, setSstu] = useState('')
+    
+    useEffect(() => {
+        axios.get("http://localhost:8081/stu")
+            .then(res => setstudent(res.data));
+    })
+    useEffect(() => {
+        axios.get("http://localhost:8081/company")
+            .then(res => setcompany(res.data));
+    })
+    useEffect(() => {
+        axios.get("http://localhost:8081/job")
+            .then(res => setjob(res.data));
+    })
+    useEffect(() => {
+        axios.get("http://localhost:8081/Sstu")
+            .then(res => setSstu(res.data));
+    })
+
     return (
         <>
             <div id="wrapper">
@@ -21,7 +45,7 @@ const Dashboard = () => {
                                             <h5>Total Students</h5>
                                         </div>
                                         <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
-                                            60
+                                            {student}
                                         </div>
                                     </div>
                                 </div>
@@ -34,7 +58,7 @@ const Dashboard = () => {
                                             <h5>Placement Drive </h5>
                                         </div>
                                         <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
-                                            2
+                                            {job}
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +71,7 @@ const Dashboard = () => {
                                             <h5> Selected Students </h5>
                                         </div>
                                         <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
-                                            3
+                                            {Sstu}
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +84,7 @@ const Dashboard = () => {
                                             <h5> Total Companies </h5>
                                         </div>
                                         <div className="col-md-6 fa-3x" style={{ paddingTop: "40px" }}>
-                                            2
+                                            {company}
                                         </div>
                                     </div>
                                 </div>
@@ -69,8 +93,8 @@ const Dashboard = () => {
                         {/* <!-- /. ROW  --> */}
 
 
-                        <hr />
-                        <div className="row">
+                        {/* <hr /> */}
+                        {/* <div className="row">
 
                             <div className="col-md-8">
 
@@ -110,10 +134,10 @@ const Dashboard = () => {
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <!--/.Row--> */}
 
-                        </div>
+                        {/* </div> */}
                         {/* <!-- /. PAGE INNER  --> */}
                     </div>
                     {/* <!-- /. PAGE WRAPPER  --> */}
