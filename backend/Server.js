@@ -76,7 +76,7 @@ app.post("/student/select", (req, res) => {
 })
 
 app.get("/selected",(req, res) => {
-    const sql = "SELECT * FROM application";
+    const sql = "SELECT * FROM selected";
     db.query(sql, (err, data) => {
         if (err) return res.json(err);
         return res.json(data);
@@ -135,7 +135,7 @@ app.get("/company",(req, res) => {
     })
 })
 app.get("/Sstu",(req, res) => {
-    const sql = "SELECT COUNT(id) as count FROM job";
+    const sql = "SELECT COUNT(id) as count FROM selected";
     db.query(sql, (err, data) => {
         if (err) return res.json(err);
         return res.json(data[0].count);

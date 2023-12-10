@@ -3,11 +3,11 @@ import axios from 'axios';
 
 const JobApplication = () => {
 
-    const [job, setjob] = useState([])
+    const [app, setapp] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8081/selected')
-            .then(res => setjob(res.data))
+        axios.get('http://localhost:8081/application')
+            .then(res => setapp(res.data))
             .catch(err => console.log(err));
     })
 
@@ -31,7 +31,7 @@ const JobApplication = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {job.map((d, i) => (
+                                            {app.map((d, i) => (
                                                 <tr>
                                                     <td data-label="Company" title="">{d.company}</td>
                                                     <td data-label="job" title="">{d.job}</td>
