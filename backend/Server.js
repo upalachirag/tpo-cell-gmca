@@ -310,6 +310,16 @@ app.delete("/AdminDelete/:id", (req, res) => {
     })
 })
 
+app.post("/uploadAdminImage/:id", upload.single('image'), (req, res) => {
+    const image = req.file.filename;
+    const id = req.params.id;
+    const sql = "UPDATE admin SET `image`=? WHERE `id`=?";
+    db.query(sql, [image, id], (err, data) => {
+        if (err) return res.json(err);
+        return res.json({ Status: "Success" });
+    })
+})
+
 //Excel File Upload
 const excelstorage = multer.diskStorage({
     destination: (req, file, cb) => {

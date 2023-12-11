@@ -7,7 +7,8 @@ const ManageAdmin = () => {
     const [name, setname] = useState();
     const [email, setemail] = useState();
     const [password, setpassword] = useState();
-    // const [AdminImage, setAdminImage] = useState();
+    const [AdminImage, setAdminImage] = useState();
+    const [AdminID, setAdminID] = useState();
     const [admin, setadmin] = useState([]);
 
     useEffect(() => {
@@ -16,25 +17,39 @@ const ManageAdmin = () => {
             .catch(err => console.log(err));
     }, [])
 
-    // const handleAdminImage = (e) => {
-    //     setAdminImage(e.target.files[0]);
-    // }
-
     const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.post('http://localhost:8081/admin/AddAdmin', { name, email, password })
-            .then(res => {
-                console.log(res);
-                navigate('/admin/AdminManage');
-            }).catch(err => console.log(err));
+        .then(res => {
+            console.log(res);
+            navigate('/admin/AdminManage');
+        }).catch(err => console.log(err));
     }
-
+    
     const handleDelete = (id) => {
         axios.delete('http://localhost:8081/AdminDelete/' + id)
+        .then(res => {
+            // navigate("/admin/AdminManage");
+            window.location.reload();
+        })
+        .catch(err => console.log(err));
+    }
+    
+    const handleAdminImage = (e) => {
+        setAdminImage(e.target.files[0]);
+    }
+
+    const handleAdminImageUpload = () => {
+        const formdata = new FormData();
+        formdata.append('image', AdminImage);
+        axios.post('http://localhost:8081/uploadAdminImage/' + AdminID, formdata)
             .then(res => {
-                // navigate("/admin/AdminManage");
-                window.location.reload();
+                if (res.data.Status === "Success") {
+                    console.log("Admin Image Added Successfully");
+                } else {
+                    console.log("Admin Image Upload Operation Failed");
+                }
             })
             .catch(err => console.log(err));
     }
@@ -62,6 +77,17 @@ const ManageAdmin = () => {
                                         <input type="text" id="password" onChange={e => setpassword(e.target.value)} />
                                     </div>
                                     <button className="btn btn-lg btn-primary" type="submit">Add Admin</button>
+                                </form>
+                                <form onSubmit={handleAdminImageUpload} className="form-inline" style={{ marginBottom: '20px' }}>
+                                    <div>
+                                        <label htmlFor="adminId">Admin Id</label>
+                                        <input type="text" onChange={e => setAdminID(e.target.value)} id="AdminId" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="adminImage">Image</label>
+                                        <input type="file" id="adminImage" onChange={handleAdminImage} />
+                                    </div>
+                                    <button className="btn btn-lg btn-primary" type="submit">Add Admin Image</button>
                                 </form>
                                 {/* <Link to="" className="btn btn-lg btn-primary" style={{ marginBottom: '20px' }}>
                                         Add Company Photo <i className="glyphicon glyphicon-plus"></i>
