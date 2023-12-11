@@ -14,7 +14,7 @@ const app = express();
 app.use(cors(
     {
         origin:["http://localhost:3000"],
-        methods:["POST", "GET"],
+        methods:["POST", "GET", "DELETE", "PUT"],
         credentials: true
     }
 ));
@@ -98,7 +98,6 @@ app.post("/student/updateprofile", (req, res) => {
         return res.json(data);
     })
 })
-
 
 //placement
 app.get("/student/placement",(req, res) => {
@@ -279,13 +278,37 @@ app.post("/StudentImage/:enroll", upload.single('image'), (req, res) => {
     })
 })
 
-// app.get("/companyImage", (req, res) => {
-//     const sql = "SELECT * FROM company";
-//     db.query(sql, (err, data) => {
-//         if(err) return res.json(err);
-//         return res.json(data);
-//     })
-// })
+//Admin Management
+app.post("/admin/AddAdmin", (req, res) => {
+    console.log(req.body);
+    const sql = "INSERT INTO admin (`name`,`email`,`password`) VALUES (?)";
+    const values = [
+        req.body.name,
+        req.body.email,
+        req.body.password
+    ]
+    db.query(sql, [values], (err, data) => {
+        if (err) return console.log(err);
+        return res.json("Admin Added Succesfully");
+    })
+})
+
+app.get("/admin/AdminManage", (req, res) => {
+    const sql = "SELECT * FROM admin";
+    db.query(sql, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data);
+    })
+})
+
+app.delete("/AdminDelete/:id", (req, res) => {
+    const sql = "DELETE FROM admin WHERE id = ?";
+    const id = req.params.id;
+    db.query(sql, [id], (err, data) => {
+        if (err) return res.json(err);
+        return res.json("Admin Deleted Succesfully");
+    })
+})
 
 //Excel File Upload
 const excelstorage = multer.diskStorage({

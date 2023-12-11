@@ -44,7 +44,7 @@ const GalleryManage = () => {
                                 <form className="form-inline" style={{ marginBottom: '20px' }}>
 
                                     <label htmlFor="company_logo">Image:</label>
-                                    <input type="file" onChange={handleCompanyImage} className="form-control-file" id="company_logo" />
+                                    <input type="file" onChange={handleCompanyImage} id="company_logo" />
 
                                     <label htmlFor="company_id">Company Id:</label>
                                     <input type="number" id="company_id" onChange={e => setCompanyId(e.target.value)} placeholder="Company Id" />

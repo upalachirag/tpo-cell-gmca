@@ -35,6 +35,7 @@ import Placement from './Components/Student/Placement';
 import Profile from './Components/Student/Profile';
 import ProfileView from './Components/Student/ProfileView';
 import JobApplication from './Components/Admin/JobApplication';
+import ManageAdmin from './Components/Admin/ManageAdmin';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -69,6 +70,7 @@ const router = createBrowserRouter(
         <Route path='JobAdd' element={<JobAdd />} />
         <Route path='JobEdit/:id' element={<JobEdit />} />
         <Route path='GalleryManage' element={<GalleryManage />} />
+        <Route path='AdminManage' element={<ManageAdmin />} />
       </Route>
     </Route>
   )

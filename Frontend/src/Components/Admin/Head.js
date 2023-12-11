@@ -130,6 +130,9 @@ const Head = () => {
                             <Link to="/admin/GalleryManage"><i className="fa fa-photo "></i>Gallery</Link>
                         </li>
                         <li>
+                            <Link to="/admin/AdminManage"><i className="fa fa-user"></i>Admin Management</Link>
+                        </li>
+                        <li>
                             <a href="/"><i className="fa fa-sign-in "></i>Login Out</a>
                         </li>
                     </ul>

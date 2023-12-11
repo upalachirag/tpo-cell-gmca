@@ -63,8 +63,8 @@ const StudentList = () => {
                                 <form >
                                     <h1 className='page-head-line'>Student List</h1>
                                     <form className="form-inline" style={{ marginBottom: "15px" }} >
-                                        <label htmlFor="company_logo">Excel File:</label>
-                                        <input type="file" id='excel' className="form-control-file" required onChange={handleFile} />
+                                        <label htmlFor="excel">Excel File:</label>
+                                        <input type="file" name='excel' id='excel' required onChange={handleFile} />
                                         <button type="submit" className="btn btn-success btn-md" onClick={handleFileSubmit}>UPLOAD</button>
                                     </form>
                                     {typeError && (
